@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>text</title>
+      <link href="/2022/10/14/text/"/>
+      <url>/2022/10/14/text/</url>
+      
+        <content type="html"><![CDATA[<p>123</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> c </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2022/10/12/hello-world/"/>
       <url>/2022/10/12/hello-world/</url>
@@ -21,9 +40,15 @@
       <link href="/2022/10/12/the-first-blog/"/>
       <url>/2022/10/12/the-first-blog/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>abc</p>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> c </tag>
+            
+        </tags>
       
     </entry>
     

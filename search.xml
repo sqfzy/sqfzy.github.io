@@ -4,12 +4,18 @@
   
     
     <entry>
-      <title>text</title>
-      <link href="/2022/10/14/text/"/>
-      <url>/2022/10/14/text/</url>
+      <title>冒泡排序</title>
+      <link href="/2022/10/15/mou-pao-pai-xu/"/>
+      <url>/2022/10/15/mou-pao-pai-xu/</url>
       
-        <content type="html"><![CDATA[<p>123</p>]]></content>
+        <content type="html"><![CDATA[<pre class="line-numbers language-none"><code class="language-none">#include&lt;stdio.h&gt;void Bubble_sort(int arr[], int size)&#123;int j,i,tem;for (i &#x3D; 0; i &lt; size-1;i ++)&#x2F;&#x2F;size-1是因为不用与自己比较，所以比的数就少一个&#123;int count &#x3D; 0;for (j &#x3D; 0; j &lt; size-1 - i; j++)&#x2F;&#x2F;size-1-i是因为每走完一趟就会少一个数比较&#123;if (arr[j] &gt; arr[j+1])&#x2F;&#x2F;这是升序排法，前一个数和后一个数比较，如果前数大则与后一个数换位置&#123;tem &#x3D; arr[j];arr[j] &#x3D; arr[j+1];&#x2F;&#x2F;如果将j+1改为j++则会使变量j的值+1arr[j+1] &#x3D; tem;count &#x3D; 1;&#125;&#125;if (count &#x3D;&#x3D; 0)&#x2F;&#x2F;如果某一趟没有交换位置，则说明数组已经排好序，直接退出循环break;&#125; &#125;int main()&#123;int arr[10];int i;printf(&quot;请输入10个数\n&quot;);for (i &#x3D; 0; i &lt; 10; i++)&#x2F;&#x2F;接收用户的数值&#123;scanf(&quot;%d&quot;, &amp;arr[i]);&#125;printf(&quot;排序前的数组&gt;&quot;);for (i &#x3D; 0; i &lt; 10; i++)&#123;printf(&quot;%d &quot;, arr[i]);&#125; printf(&quot;\n排序后的数组&gt;&quot;);Bubble_sort(arr, 10);for (i &#x3D; 0; i &lt; 10; i++)&#123;printf(&quot;%d &quot;, arr[i]);&#125; return 0;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
       
+      
+      <categories>
+          
+          <category> 学习日记 </category>
+          
+      </categories>
       
       
         <tags>
@@ -17,6 +23,44 @@
             <tag> c </tag>
             
         </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>指针</title>
+      <link href="/2022/10/15/zhi-zhen/"/>
+      <url>/2022/10/15/zhi-zhen/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习日记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> c </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>text</title>
+      <link href="/2022/10/14/text/"/>
+      <url>/2022/10/14/text/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
       
     </entry>
     

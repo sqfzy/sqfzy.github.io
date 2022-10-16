@@ -8,8 +8,14 @@
       <link href="/2022/10/15/shu-ju-jie-gou-chu-shi/"/>
       <url>/2022/10/15/shu-ju-jie-gou-chu-shi/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="1-基本概念"><a href="#1-基本概念" class="headerlink" title="1.基本概念"></a>1.基本概念</h1><ul><li>数据： 能被计算机<strong>识别</strong>，能<strong>输入</strong>到计算机，并能被计算机<strong>处理</strong>的符号的集合。  </li><li><strong>数据元素</strong>可由若干个<strong>数据项</strong>组成，数据项是最小单位。</li><li>数据对象： 性质相同的数据元素的集合，是数据的一个子集。</li><li>数据结构： 数据的组织形式。</li><li>数据类型 = 值的集合 + 值集合上的一组操作。  <h1 id="2-数据结构"><a href="#2-数据结构" class="headerlink" title="2. 数据结构"></a>2. 数据结构</h1></li><li>逻辑结构  <ul><li>集合结构：数据元素除同属一个集合外，无其他关系。</li><li>线性结构：一对一。</li><li>树形结构：一对多。</li><li>图结构：多对多。  </li></ul></li><li>存储结构（物理结构）  <ul><li>顺序存储结构：逻辑关系与物理关系一致。</li><li>链式存储结构：物理关系不反应逻辑关系，需要借助指针表示数据元素的逻辑关系。<h1 id="3-抽象数据类型（ADT）"><a href="#3-抽象数据类型（ADT）" class="headerlink" title="3. 抽象数据类型（ADT）"></a>3. 抽象数据类型（ADT）</h1></li></ul></li></ul>]]></content>
       
+      
+      <categories>
+          
+          <category> 数据结构与算法 </category>
+          
+      </categories>
       
       
     </entry>

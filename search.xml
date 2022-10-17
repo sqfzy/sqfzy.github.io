@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>字符串和字符串函数</title>
+      <link href="/2022/10/17/zi-fu-chuan-he-zi-fu-chuan-han-shu/"/>
+      <url>/2022/10/17/zi-fu-chuan-he-zi-fu-chuan-han-shu/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-字符串"><a href="#1-字符串" class="headerlink" title="1.字符串"></a>1.字符串</h2><ul><li>字符串常量属于静态存储类别，其地址固定的。</li><li>“are”可以被视为指向该字符串存储位置的指针，即”a”的地址。</li><li>*”are” 表示字符’a’。</li><li>定义字符串 　 //数组大小必须是可求值的整数<ul><li>char ch[] = “are”;</li><li>char ch[n] = “are”;</li><li>const char* pt = “are”;　//变长数组<h2 id="2-数组和指针对于字符串的区别"><a href="#2-数组和指针对于字符串的区别" class="headerlink" title="2.数组和指针对于字符串的区别"></a>2.数组和指针对于字符串的区别</h2><h3 id="1-不同方式表示字符串"><a href="#1-不同方式表示字符串" class="headerlink" title="1.不同方式表示字符串"></a>1.不同方式表示字符串</h3></li></ul></li><li>char ch[] = “are”; 表示将字符串”are”从静态存储区拷贝到数组中，因此在不同地址上存储了两份”are”。<br>const char* pt = “are”; 表示把字符串”are”的地址存储在指针变量中，该指针指向”a”的地址。</li><li>在数组中，可以更改字符串。在指针中，不能更改字符串，因为字符串常量被视为const数据。<em><strong>因此，需要修改字符串就不要用指针</strong></em><h3 id="2-字符串存储方式不同"><a href="#2-字符串存储方式不同" class="headerlink" title="2. 字符串存储方式不同"></a>2. 字符串存储方式不同</h3></li><li>二维数组（ char ch[][] ）与指针数组（const char* pt[])<br><img src="https://img1.imgtp.com/2022/10/17/D4euygn6.png" alt="1"></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习日记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>递归</title>
       <link href="/2022/10/17/di-gui/"/>
       <url>/2022/10/17/di-gui/</url>

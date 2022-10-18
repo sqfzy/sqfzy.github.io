@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>算法与算法分析1</title>
+      <link href="/2022/10/18/suan-fa-yu-suan-fa-fen-xi-1/"/>
+      <url>/2022/10/18/suan-fa-yu-suan-fa-fen-xi-1/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-研究内容"><a href="#1-研究内容" class="headerlink" title="1.研究内容"></a>1.研究内容</h2><ul><li>逻辑结构：研究对象的特性及其相互之间的关系。<br>存储结构：有效地组织计算机存储。<br>算法：有效地实现对象之间的“运算”关系。<br><img src="Snipaste_2022-10-18_15-47-38.png" alt="Snipaste 2022 10 18 15 47 38"></li><li>算法与程序  <ul><li>算法是解决问题的一种方法。程序是某种程序设计语言对算法的具体实现。</li><li>程序 = 数据结构 + 算法。数据结构通过算法实现操作，算法根据数据结构设计程序。<h2 id="2-算法的特性"><a href="#2-算法的特性" class="headerlink" title="2. 算法的特性"></a>2. 算法的特性</h2></li></ul></li><li>有穷性</li><li>确定性</li><li>可行性</li><li>输入</li><li>输出  <h2 id="3-算法的要求"><a href="#3-算法的要求" class="headerlink" title="3. 算法的要求"></a>3. 算法的要求</h2></li><li>正确性</li><li>可读性</li><li>健壮性</li><li>高效性<h2 id="4-时间复杂度"><a href="#4-时间复杂度" class="headerlink" title="4. 时间复杂度"></a>4. 时间复杂度</h2></li><li>用事前分析而不用事后统计</li><li>执行时间可能因输入不同而不同。分为最坏时间复杂度和平均时间复杂度。</li><li>对于复杂的算法，可以分成几个简单的部分。<ul><li>加法规则：T(n)=O[(f(n)]+O[g(n)]=O[max(f(n),g(n))]</li><li>乘法规则：T(n)=O[f(n)]+O[g(n)]=O[f(n)*g(n)]</li></ul></li><li>O(1)&lt;O(lgn)&lt;O(n)&lt;O(n^2)&lt;O(n ^3)&lt;O(2 ^n)&lt;O(n!)</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 数据结构与算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Tue Oct 18 2022 00:00:00 GMT+0800 (中国标准时间)</title>
       <link href="/2022/10/18/2022-10-18/"/>
       <url>/2022/10/18/2022-10-18/</url>
@@ -71,19 +90,19 @@
       <link href="/2022/10/15/shu-ju-jie-gou-chu-shi/"/>
       <url>/2022/10/15/shu-ju-jie-gou-chu-shi/</url>
       
-        <content type="html"><![CDATA[<h1 id="1-基本概念"><a href="#1-基本概念" class="headerlink" title="1.基本概念"></a>1.基本概念</h1><ul><li>数据： 能被计算机<strong>识别</strong>，能<strong>输入</strong>到计算机，并能被计算机<strong>处理</strong>的符号的集合。  </li><li><strong>数据元素</strong>可由若干个<strong>数据项</strong>组成，数据项是最小单位。</li><li>数据对象： 性质相同的数据元素的集合，是数据的一个子集。</li><li>数据结构： 数据的组织形式。</li><li>数据类型 = 值的集合 + 值集合上的一组操作。  <h1 id="2-数据结构"><a href="#2-数据结构" class="headerlink" title="2. 数据结构"></a>2. 数据结构</h1></li><li>逻辑结构  <ul><li>集合结构：数据元素除同属一个集合外，无其他关系。</li><li>线性结构：一对一。</li><li>树形结构：一对多。</li><li>图结构：多对多。  </li></ul></li><li>存储结构（物理结构）  <ul><li>顺序存储结构：逻辑关系与物理关系一致。</li><li>链式存储结构：物理关系不反应逻辑关系，需要借助指针表示数据元素的逻辑关系。<h1 id="3-抽象数据类型（ADT）"><a href="#3-抽象数据类型（ADT）" class="headerlink" title="3. 抽象数据类型（ADT）"></a>3. 抽象数据类型（ADT）</h1></li></ul></li></ul>]]></content>
+        <content type="html"><![CDATA[<h1 id="1-基本概念"><a href="#1-基本概念" class="headerlink" title="1.基本概念"></a>1.基本概念</h1><ul><li>数据： 能被计算机<strong>识别</strong>，能<strong>输入</strong>到计算机，并能被计算机<strong>处理</strong>的符号的集合。  </li><li><strong>数据元素</strong>可由若干个<strong>数据项</strong>组成，数据项是最小单位。</li><li>数据对象： 性质相同的数据元素的集合，是数据的一个子集。</li><li>数据结构： 数据的组织形式。</li><li>数据类型 = 值的集合 + 值集合上的一组操作。  <h1 id="2-数据结构"><a href="#2-数据结构" class="headerlink" title="2. 数据结构"></a>2. 数据结构</h1></li><li>逻辑结构  <ul><li>集合结构：数据元素除同属一个集合外，无其他关系。</li><li>线性结构：一对一。</li><li>树形结构：一对多。</li><li>图结构：多对多。  </li></ul></li><li>存储结构（物理结构）  <ul><li>顺序存储结构：逻辑关系与物理关系一致。</li><li>链式存储结构：物理关系不反应逻辑关系，需要借助指针表示数据元素的逻辑关系。<h1 id="3-抽象数据类型（ADT）"><a href="#3-抽象数据类型（ADT）" class="headerlink" title="3. 抽象数据类型（ADT）"></a>3. 抽象数据类型（ADT）</h1></li></ul></li><li>定义：抽象数据类型是描述具有某种逻辑关系的数学模型，并定义在该数学模型上进行的一组操作。它与数据在计算机内部的表示无关。</li><li>实现：<br><img src="385495a61af326726f44321b6540c7e.jpg" alt="抽象数据类型的实现">       <h1 id="4-总结"><a href="#4-总结" class="headerlink" title="4.总结"></a>4.总结</h1><img src="704382f2de899efbf55eb41b9332355.jpg" alt="总结"></li></ul>]]></content>
       
       
       <categories>
           
-          <category> 数据结构与算法 </category>
+          <category> 学习日记 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 数据结构 </tag>
+            <tag> 数据结构与算法 </tag>
             
         </tags>
       

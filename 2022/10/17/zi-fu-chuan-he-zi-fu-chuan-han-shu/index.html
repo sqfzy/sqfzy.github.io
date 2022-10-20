@@ -401,21 +401,21 @@ char ch[] = “are”;
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-10-18
+                    2022-10-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    684
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    4 分
                 </div>
                 
 
@@ -445,12 +445,12 @@ char ch[] = “are”;
 <li>定义字符串 　 //数组大小必须是可求值的整数<ul>
 <li>char ch[] = “are”;</li>
 <li>char ch[n] = “are”;</li>
-<li>const char* pt = “are”;　//变长数组<h2 id="2-数组和指针对于字符串的区别"><a href="#2-数组和指针对于字符串的区别" class="headerlink" title="2.数组和指针对于字符串的区别"></a>2.数组和指针对于字符串的区别</h2><h3 id="1-不同方式表示字符串"><a href="#1-不同方式表示字符串" class="headerlink" title="1.不同方式表示字符串"></a>1.不同方式表示字符串</h3></li>
+<li>const char* pt = “are”;　//变长数组<h2 id="2-数组和指针对于字符串的区别"><a href="#2-数组和指针对于字符串的区别" class="headerlink" title="2.数组和指针对于字符串的区别"></a>2.数组和指针对于字符串的区别</h2><h2 id="1-不同方式表示字符串"><a href="#1-不同方式表示字符串" class="headerlink" title="1.不同方式表示字符串"></a>1.不同方式表示字符串</h2></li>
 </ul>
 </li>
 <li>char ch[] = “are”; 表示将字符串”are”从静态存储区拷贝到数组中，因此在不同地址上存储了两份”are”。<br>const char* pt = “are”; 表示把字符串”are”的地址存储在指针变量中，该指针指向”a”的地址。</li>
-<li>在数组中，可以更改字符串。在指针中，不能更改字符串，因为字符串常量被视为const数据。<em><strong>因此，需要修改字符串就不要用指针</strong></em><h3 id="2-字符串存储方式不同"><a href="#2-字符串存储方式不同" class="headerlink" title="2. 字符串存储方式不同"></a>2. 字符串存储方式不同</h3></li>
-<li>二维数组（ char ch[][] ）与指针数组（const char* pt[])<br><img src="Snipaste_2022-10-18_12-23-36.png" alt="Snipaste 2022 10 18 12 23 36"><h3 id="3-字符串输入"><a href="#3-字符串输入" class="headerlink" title="3. 字符串输入"></a>3. 字符串输入</h3></li>
+<li>在数组中，可以更改字符串。在指针中，不能更改字符串，因为字符串常量被视为const数据。<em><strong>因此，需要修改字符串就不要用指针</strong></em><h2 id="2-字符串存储方式不同"><a href="#2-字符串存储方式不同" class="headerlink" title="2. 字符串存储方式不同"></a>2. 字符串存储方式不同</h2></li>
+<li>二维数组（ char ch[][] ）与指针数组（const char* pt[])<br><img src="Snipaste_2022-10-18_12-23-36.png" alt="Snipaste 2022 10 18 12 23 36"><h2 id="3-字符串输入"><a href="#3-字符串输入" class="headerlink" title="3. 字符串输入"></a>3. 字符串输入</h2></li>
 </ul>
 <ol>
 <li>分配空间<br>输入字符串，必须事先为其分配足够的空间，否则可能会擦写掉程序中的数据或代码。</li>
@@ -498,11 +498,46 @@ int main(void)
 <ul>
 <li>只从标准输入中读取数据，所以不需要第三个参数。</li>
 <li>gets_s()会丢弃换行符</li>
-<li><em><strong>待填</strong></em><h3 id="4-字符串输出"><a href="#4-字符串输出" class="headerlink" title="4.字符串输出"></a>4.字符串输出</h3></li>
+<li><em><strong>待填</strong></em><h2 id="4-字符串输出"><a href="#4-字符串输出" class="headerlink" title="4.字符串输出"></a>4.字符串输出</h2></li>
 </ul>
 <ol>
-<li>puts()<br>给出字符串地址，然后开始打印，直到遇到空字符，结束。</li>
+<li>puts()<br>给出字符串地址，然后开始打印，直到遇到空字符，添加换行符后结束。</li>
+<li>fputs()<br>不会在末尾添加换行符。<h2 id="5-字符串函数"><a href="#5-字符串函数" class="headerlink" title="5.字符串函数"></a>5.字符串函数</h2></li>
+<li>strlen()——统计字符串长度</li>
+<li><ul>
+<li>strcat(字符串1，字符串2)——字符串1末尾拼接字符串2，返回字符串1指针  <ul>
+<li>该函数把字符串2备份附加在字符串1末尾，然后返回新的字符串1。  </li>
+</ul>
+</li>
+<li>strncat(字符串1，字符串2，int a)——同strcat(),但可以防止溢出</li>
+</ul>
+</li>
+<li><ul>
+<li>strcmp(字符串1，字符串2)——比较两字符串内容是否一样，返回目标字符串指针<ul>
+<li>strcmp(“A”,”B”)输出负数</li>
+<li>strcmp(“A”,”A”)输出0</li>
+<li>strcmp(“B”,”A”)输出正数  </li>
+</ul>
+</li>
+<li>strncmp(字符串1，字符串2，int a)——可以指定比较的字符数</li>
+</ul>
+</li>
+<li><ul>
+<li>strcpy(char target[20],字符串1）——拷贝字符串,返回目标字符串指针<ul>
+<li>char target[20]称为目标字符串，字符串1称为源字符串</li>
+<li>该函数可以不将源字符串拷贝到数组的开始地址<br>eg.strcpy(copy+7,”abc”),从第八个元素开始拷贝  </li>
+</ul>
+</li>
+<li>strncpy(char target[20],字符串1，int a)</li>
+</ul>
+</li>
+<li>sprintf(目标字符串，”%s %s”,字符串1，字符串2)——组合字符串  <h3 id="6-把字符串转换为数字"><a href="#6-把字符串转换为数字" class="headerlink" title="6.把字符串转换为数字"></a>6.把字符串转换为数字</h3></li>
 </ol>
+<ul>
+<li>pinrtf()函数中，用%d等转换说明把数字从数值形式转化为字符串形式显示在屏幕</li>
+<li>atoi()函数，将数字字符转化为数值，若非数字字符则返回0</li>
+<li>strtol(字符串，结束地址，进制)，将字符串转换成long类型的值。strtod()，转换成doule类型，没有进制</li>
+</ul>
 
                 
             </div>
@@ -920,7 +955,7 @@ int main(void)
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">2k</span>
+                        class="white-color">2.4k</span>
             
             
             

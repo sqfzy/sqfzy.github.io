@@ -4,12 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="冒泡排序, Hexo">
-    <meta name="description" content="#include&amp;lt;stdio.h&amp;gt;
-void Bubble_sort(int arr[], int size)
-&amp;#123;
-	int j,i,tem;
-	for (i &amp;#x3D; 0; i &amp;lt; size-1;i ++)">
+    <meta name="keywords" content="存储类别，链接和内存管理, Hexo">
+    <meta name="description" content="1）存储类别
+对象：一块指定的内存
+标识符：名称，用于指定特定对象（一块内存）的内容，方便访问对象
+左值：指定对象的表达式  eg.
+int entity &amp;#x3D; 3   &amp;#x2F;&amp;#x2F;entity(标识符&amp;#x2F;左值）">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +21,7 @@ void Bubble_sort(int arr[], int size)
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>冒泡排序 | Hexo</title>
+    <title>存储类别，链接和内存管理 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -338,12 +338,12 @@ void Bubble_sort(int arr[], int size)
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">冒泡排序</h1>
+                    <h1 class="description center-align post-title">存储类别，链接和内存管理</h1>
                 </div>
             </div>
         </div>
@@ -392,28 +392,28 @@ void Bubble_sort(int arr[], int size)
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-10-15
+                    2022-10-26
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-10-17
+                    2022-10-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    304
+                    854
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -436,54 +436,107 @@ void Bubble_sort(int arr[], int size)
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <pre class="line-numbers language-none"><code class="language-none">#include&lt;stdio.h&gt;
-void Bubble_sort(int arr[], int size)
+                <h3 id="1）存储类别"><a href="#1）存储类别" class="headerlink" title="1）存储类别"></a>1）存储类别</h3><ul>
+<li>对象：一块指定的内存</li>
+<li>标识符：名称，用于指定特定对象（一块内存）的内容，方便访问对象</li>
+<li>左值：指定对象的表达式  <pre class="line-numbers language-none"><code class="language-none">eg.
+int entity &#x3D; 3   &#x2F;&#x2F;entity(标识符&#x2F;左值）指定一块内存（对象）为3（内容）
+int* pt &#x3D; &quot;abc&quot;  &#x2F;&#x2F;pt(标识符&#x2F;左值）指定一块内存存储地址，*pt(表达式&#x2F;左值）指定一块内存存&quot;abc&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="2）作用域——描述程序中可访问标识符的区域"><a href="#2）作用域——描述程序中可访问标识符的区域" class="headerlink" title="2）作用域——描述程序中可访问标识符的区域"></a>2）作用域——描述程序中可访问标识符的区域</h3></li>
+<li>块作用域<pre class="line-numbers language-none"><code class="language-none">double blocky(double cleo)
 &#123;
-	int j,i,tem;
-	for (i &#x3D; 0; i &lt; size-1;i ++)&#x2F;&#x2F;size-1是因为不用与自己比较，所以比的数就少一个
+	double patrick &#x3D; 0.0;
+	int i;
+	for (i &#x3D; 0; i &lt; 10; i++)
 	&#123;
-		int count &#x3D; 0;
-		for (j &#x3D; 0; j &lt; size-1 - i; j++)	&#x2F;&#x2F;size-1-i是因为每走完一趟就会少一个数比较
-		&#123;
-			if (arr[j] &gt; arr[j+1])&#x2F;&#x2F;这是升序排法，前一个数和后一个数比较，如果前数大则与后一个数换位置
-			&#123;
-				tem &#x3D; arr[j];
-				arr[j] &#x3D; arr[j+1];&#x2F;&#x2F;如果将j+1改为j++则会使变量j的值+1
-				arr[j+1] &#x3D; tem;
-				count &#x3D; 1;
-				
-			&#125;
-		&#125;
-		if (count &#x3D;&#x3D; 0)			&#x2F;&#x2F;如果某一趟没有交换位置，则说明数组已经排好序，直接退出循环
-				break;	
-	&#125;
- 
-&#125;
+		double q &#x3D; cleo * i;	&#x2F;&#x2F;q的作用域开始
+		patrick *&#x3D; q;
+	&#125;				&#x2F;&#x2F;q的作用域结束
+	return patrick;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>函数作用域<br>仅用于goto语句的标签，即是一个标签首次出现在函数的内层块中，它的作用域也延伸至整个函数，防止两个块中使用同一标签而显得混乱。</li>
+<li>函数原型作用域<br>用于函数原型中的形参名，范围是从形参定义处到原型声明结束。</li>
+<li>文件作用域<br>从变量的定义处到文件末尾<pre class="line-numbers language-none"><code class="language-none">#include&lt;stdio.h&gt;	
+int units &#x3D; 0;　　&#x2F;&#x2F;该变量具有文件作用域
 int main()
 &#123;
-	int arr[10];
-	int i;
-	
-	printf(&quot;请输入10个数\n&quot;);
-	for (i &#x3D; 0; i &lt; 10; i++)		&#x2F;&#x2F;接收用户的数值
-	&#123;
-		scanf(&quot;%d&quot;, &amp;arr[i]);
-	&#125;
-	printf(&quot;排序前的数组&gt;&quot;);
-	for (i &#x3D; 0; i &lt; 10; i++)
-	&#123;
-		printf(&quot;%d &quot;, arr[i]);
-	&#125;
- 
-	printf(&quot;\n排序后的数组&gt;&quot;);
-	Bubble_sort(arr, 10);
-	for (i &#x3D; 0; i &lt; 10; i++)
-	&#123;
-		printf(&quot;%d &quot;, arr[i]);
-	&#125;
- 
-	return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p><strong>Tip： 翻译单元和文件</strong><br>编译器把源代码文件和所有的头文件看作一个包含信息的单独文件。这个单独文件被称为翻译单元。<br>描述一个具有文件作用域的变量时，它的实际可见范围是整个翻译单元。如果程序由多个源代码文件组成，<br>那么该程序也将由多个翻译单元组成。每个翻译单元均对应一个源代码文件和它所包含的文件。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="3）链接"><a href="#3）链接" class="headerlink" title="3）链接"></a>3）链接</h3><ul>
+<li>种类：外部链接，内部链接和无链接<pre class="line-numbers language-none"><code class="language-none">int giants &#x3D; 5;　 &#x2F;&#x2F;外部链接的文件作用域，能跨翻译单元
+static int dodgers &#x3D; 3;　　　　&#x2F;&#x2F;内部链接的文件作用域，不能跨翻译单元
+　　　　　　　　　　　　　　　　&#x2F;&#x2F;static是存储类别说明符  
+int main()
+&#123;
+
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="4-存储期"><a href="#4-存储期" class="headerlink" title="4)存储期"></a>4)存储期</h3></li>
+<li>静态存储期：在程序执行期间一直存在。文件作用域变量具有静态存储期。</li>
+<li>线程存储期：从声明到线程结束，每个线程都获得该变量的私有备份。</li>
+<li>自动存储期：块作用域的变量一般具有自动存储期。从块的开始，为这些变量分配内存，到块的结束，释放刚才分配的内存。  <blockquote>
+<p>Tip:<br>   1.变长数组的存储期是从声明处到块的末尾。<br>   2.块作用域变量也能具有静态存储期。</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">void more(int number)
+&#123;
+	int index;
+	static int ct &#x3D; 0;　&#x2F;*只有在执行该函数时,能通过ct(标识符）访问其指定的对象，
+	                      但也可以通过地址，直接访问对象*&#x2F;
+	return &#x3D; 0;
+&#125;	 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>动态分配存储期：<h3 id="5-五种存储类别"><a href="#5-五种存储类别" class="headerlink" title="5)五种存储类别"></a>5)五种存储类别</h3><table>
+<thead>
+<tr>
+<th>存储类别</th>
+<th>存储期</th>
+<th>作用域</th>
+<th>链接</th>
+<th>声明方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>自动</td>
+<td>自动</td>
+<td>块</td>
+<td>无</td>
+<td>块内</td>
+</tr>
+<tr>
+<td>寄存器</td>
+<td>自动</td>
+<td>块</td>
+<td>无</td>
+<td>块内，使用关键字register</td>
+</tr>
+<tr>
+<td>静态外部链接</td>
+<td>静态</td>
+<td>文件</td>
+<td>外部</td>
+<td>所有函数外</td>
+</tr>
+<tr>
+<td>静态内部链接</td>
+<td>静态</td>
+<td>文件</td>
+<td>内部</td>
+<td>所有函数外，使用关键字static</td>
+</tr>
+<tr>
+<td>静态无链接</td>
+<td>静态</td>
+<td>块</td>
+<td>无</td>
+<td>块内，使用关键字static</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+
                 
             </div>
             <hr/>
@@ -509,7 +562,7 @@ int main()
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/10/15/mou-pao-pai-xu/">http://example.com/2022/10/15/mou-pao-pai-xu/</a>
+                    <a href="http://example.com/2022/10/26/cun-chu-lei-bie-lian-jie-he-nei-cun-guan-li/">http://example.com/2022/10/26/cun-chu-lei-bie-lian-jie-he-nei-cun-guan-li/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -627,17 +680,18 @@ int main()
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/10/15/shu-ju-jie-gou-chu-shi/">
+                <a href="/2022/10/26/cun-chu-lei-bie-lian-jie-he-nei-cun-guan-li/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="数据结构初识">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="存储类别，链接和内存管理">
                         
-                        <span class="card-title">数据结构初识</span>
+                        <span class="card-title">存储类别，链接和内存管理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -647,9 +701,9 @@ int main()
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-15
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-26
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -662,11 +716,12 @@ int main()
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">数据结构与算法</span>
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C</span>
                     </a>
                     
                 </div>
@@ -680,13 +735,13 @@ int main()
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/10/15/zhi-zhen/">
+                <a href="/2022/10/25/kali/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="指针">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="kali">
                         
-                        <span class="card-title">指针</span>
+                        <span class="card-title">kali</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -697,7 +752,7 @@ int main()
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-25
                             </span>
                         <span class="publish-author">
                             
@@ -714,8 +769,8 @@ int main()
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C</span>
+                    <a href="/tags/kali/">
+                        <span class="chip bg-color">kali</span>
                     </a>
                     
                 </div>
@@ -912,7 +967,7 @@ int main()
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">2.4k</span>
+                        class="white-color">5.1k</span>
             
             
             

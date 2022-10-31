@@ -395,14 +395,14 @@ int main(void)
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-10-17
+                    2022-10-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    151
+                    304
                 </div>
                 
 
@@ -450,11 +450,48 @@ void up_and_down(int n)
     printf(&quot;LEVEL %d: n location %p\n&quot;, n, &amp;n); &#x2F;&#x2F; n&#x3D;4后，函数按逆序参数[^2]重复执行该语句与之后的语句
     
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>输出结果<br><img src="https://img1.imgtp.com/2022/10/17/A1c9Ga8v.png" alt="File"></p>
 <p>Tip:  </p>
 <ul>
 <li>递归必须有出口。eg. n&lt;4   </li>
 <li>递归运行效率低，易产生大量变量</li>
+</ul>
+<p>eg. 数列：1，2，3，4…n<br>每一项（除首项）都等于前一项加1，因此有  </p>
+<ul>
+<li>f(n) = f(n-1) + 1 //递归关系</li>
+<li>f(1) = 1 //递归出口<br>所以代码为<pre class="line-numbers language-none"><code class="language-none">int function(int n)
+&#123;
+    if (n &#x3D;&#x3D; 1)
+        return 1;
+    else 
+        return function(n + 1);
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+eg.角谷猜想:n为偶数时，/2，n为奇数时，*3+1，最后总能得到1。<pre class="line-numbers language-none"><code class="language-none">#include&lt;stdio.h&gt;	
+int f(int n);
+static int sum &#x3D; 0;
+int main()
+&#123;
+	int a &#x3D; f(5);
+	printf(&quot;%d&quot;, a);
+
+	return 0;
+&#125;
+
+int f(int n)
+&#123;
+	if (n &#x3D;&#x3D; 1)
+		return sum;
+	else if (n % 2 &#x3D;&#x3D; 0)
+	&#123;
+		sum++;
+		return f(n &#x2F; 2);
+	&#125;
+	else
+	&#123;
+		sum++;
+		return f(3 * n + 1);
+	&#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<a target="_blank" rel="noopener" href="https://mermaid.live/edit#pako:eNptkr1qwzAQx19F3GQTh2AjG2NIp6yd0s3KIGy5McRykOWhpIFuHTr2IfoOpfRtDH2MnixBFVwtOun_uw-d7gJVXwso4FHx85E87JgkuPbB9PUyfbyFZL2-I7zcDJrrttoc8Ew63sr5vklLBk2Qhs8_3-_T66cxGRxsiCY1rNymFo0zZIexW60iJfSoJGmCODM4cXycWYd5R4986ZB74XNL5xamS5h6MLUwtXCyhBMPTiycuML_qduDY1f0DCNXOgpNh6BlGNOpONymDFxcP4ARE09M_FKMSImnUv9VRs09Mff7MyfN_KzZTbft9_3JKUTQCYU_XONMXAzLQB9FJxgUaNai4eNJM2Dyiigfdb9_khUUWo0igvFccy12Lcdp6qBo-GnAW1G3ulf3ds7mcbv-AgFZrd4"><img src="https://mermaid.ink/img/pako:eNptkr1qwzAQx19F3GQTh2AjG2NIp6yd0s3KIGy5McRykOWhpIFuHTr2IfoOpfRtDH2MnixBFVwtOun_uw-d7gJVXwso4FHx85E87JgkuPbB9PUyfbyFZL2-I7zcDJrrttoc8Ew63sr5vklLBk2Qhs8_3-_T66cxGRxsiCY1rNymFo0zZIexW60iJfSoJGmCODM4cXycWYd5R4986ZB74XNL5xamS5h6MLUwtXCyhBMPTiycuML_qduDY1f0DCNXOgpNh6BlGNOpONymDFxcP4ARE09M_FKMSImnUv9VRs09Mff7MyfN_KzZTbft9_3JKUTQCYU_XONMXAzLQB9FJxgUaNai4eNJM2Dyiigfdb9_khUUWo0igvFccy12Lcdp6qBo-GnAW1G3ulf3ds7mcbv-AgFZrd4?type=png"></a></li>
 </ul>
 
                 
@@ -885,7 +922,7 @@ void up_and_down(int n)
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">5.6k</span>
+                        class="white-color">8.1k</span>
             
             
             

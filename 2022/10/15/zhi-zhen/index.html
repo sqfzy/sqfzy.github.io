@@ -5,13 +5,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="指针, Hexo">
-    <meta name="description" content="
-指针的相关操作  
-定义指针
-
-
-int b = 5;　//假设b的地址为000001int* a = &amp;b;　//假设a的地址为000002   
-  a是指向b的地址的指针，指针a本身作为变量也有自己的地址，所以a的地址000002存">
+    <meta name="description" content="1）指针的相关操作
+定义指针int* a;&amp;#x2F;&amp;#x2F;a是指向整形的指针；
+int* a[5];&amp;#x2F;&amp;#x2F;一维指针数组（这里存放着5个指向整形的指针），a指向第一个元素的地址，a+1指向第二个......（a[5]">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -401,21 +397,21 @@ int b = 5;　//假设b的地址为000001int* a = &amp;b;　//假设a的地址为
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-10-20
+                    2022-11-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    308
+                    560
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -438,30 +434,28 @@ int b = 5;　//假设b的地址为000001int* a = &amp;b;　//假设a的地址为
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <ol>
-<li>指针的相关操作  <ol>
-<li>定义指针</li>
-</ol>
-<ul>
-<li><p>int b = 5;　//假设b的地址为000001<br>int* a = &b;　//假设a的地址为000002   </p>
-<p>  a是指向b的地址的指针，指针a本身作为变量也有自己的地址，所以<em>a的地址000002</em>存的是<em>b的地址000001</em>,<em>b的地址000001</em>存的是数值5。</p>
-</li>
-<li><p>int b[5];<br>int* a = b;　a是指向b[0]地址的指针</p>
-</li>
-<li><p>int b[5][3];<br>int* a = b;　a是指向b[0][0]地址的指针，a的指向对象此时为两个int类型值</p>
-</li>
-</ul>
-<ol start="2">
-<li>间接运算符/解引符 * ——取出该地址上的值或地址   </li>
-</ol>
-<ul>
+                <h2 id="1）指针的相关操作"><a href="#1）指针的相关操作" class="headerlink" title="1）指针的相关操作"></a>1）指针的相关操作</h2><ol>
+<li>定义指针<pre class="line-numbers language-none"><code class="language-none">int* a;&#x2F;&#x2F;a是指向整形的指针；
+int* a[5];&#x2F;&#x2F;一维指针数组（这里存放着5个指向整形的指针），a指向第一个元素的地址，a+1指向第二个......（a[5]是一个指针数组）；
+int (*a)[5];&#x2F;&#x2F;指向数组（这里每个一维数组含5个元素）的指针，a是第一个一维数组的首元素地址,a+1指向第二个一维数组的首元素地址......（a是数组指针）；
+int (*a)();&#x2F;&#x2F;a是指向函数的指针（函数指针）；
+int *a();&#x2F;&#x2F;函数的返回类型是int *,a只是一个函数名;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>间接运算符/解引符 * ——取出该地址上对应类型的值或地址   <ul>
 <li>*pi == 某个值　//取出pi指向地址所存储的值</li>
 <li>*<em>pi　//不合法，因为</em>pi是一个值，如 *5是非法代码</li>
 <li>ar[i] == *(ar+i)　//例如ar[0] == *ar,ar[2] == *(ar + 2)。 <em>[2]</em> 与 <em>ar+2</em> 都表示同一个地址。</li>
+<li>二维数组ar[4][5],*(ar+1)[0] == ar[1][0]是一个值。 *(ar+1)代表引用int *[5]类型的数组<h2 id="2）指针与数组"><a href="#2）指针与数组" class="headerlink" title="2）指针与数组"></a>2）指针与数组</h2></li>
 </ul>
 </li>
-<li>指针与数组<br> int* pd==int ar[]，两者等价，都表示地址并且地址指向的是整型。eg.数组第一个括号只用于表明这是一个指针，而其他的括号则用于描述指针所指向数据对象的类型。<br> 所以，声明一个指向N维数组的指针时，只能省略最左边括号的值。int (*ar)[5][5]==int ar[][5][5]</li>
+<li>int* pd==int ar[]，两者等价，都表示地址并且地址指向的是整型。eg.数组第一个括号只用于表明这是一个指针，而其他的括号则用于描述指针所指向数据对象的类型。<br> 所以，声明一个指向N维数组的指针时，只能省略最左边括号的值。<br> int (<em>ar)[4][5]==int ar[][4][5]，ar[0]表示单个的4个int空间的元素，ar[0][0]表示单个的1个int空间的元素。<br> a+1表示跨了4个int空间，a[0]+1表示跨了1int空间。</em>(a+1)获得一个数组（自动类型转换为指针），*(a[0]+1)获得一个数。<br>  *( *  (a+1)+1), *(a+1)代表a[1]地址，因此整体代表a[1][1]的数。</li>
+<li>使用数组名作为函数参数时，实际上只传递了地址，因此一般加上第二个参数——数组长度</li>
 </ol>
+<p><img src="Snipaste_2022-11-10_20-19-54.bmp" alt="Snipaste 2022 11 10 20 19 54"><br>错例：<br>1.</p>
+<pre class="line-numbers language-none"><code class="language-none">int a[3][5];
+int* p1;
+p1 &#x3D; a;     &#x2F;&#x2F;错，类型不同
+int (*p2)[5]
+p2 &#x3D; a;     &#x2F;&#x2F;对，p2为(*int)[5]类型<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -879,7 +873,7 @@ int b = 5;　//假设b的地址为000001int* a = &amp;b;　//假设a的地址为
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">8.8k</span>
+                        class="white-color">12.8k</span>
             
             
             

@@ -401,7 +401,7 @@ char ch[] = “are”;
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-10-29
+                    2022-11-10
                 </div>
                 
 
@@ -452,7 +452,7 @@ char ch[] = “are”;
 <ol>
 <li><p>概念不同<br>C语言中没有特定的字符串类型，常用以下两种方式定义字符串：一种是字符数组，另一种是指向字符串的指针。<br>char *str 声明的是一个指针，这个指针可以指向任何字符串常量。<br>char str[] 声明的是一个字符数组，数组的内容可以是任何内容，严格意义上说，末尾加上’\0’ 之后才能算是字符串。  </p>
 </li>
-<li><p>变量不同<br>char *str里的str是指针变量，str的值未初始化（局部变量的话。全局则自动初始化为NULL）。<br>char str[]里str是地址常量，str的值是str[ ]的地址。</p>
+<li><p>变量不同<br>char <em>str里的str是</em><strong>指针变量</strong><em>，str的值未初始化（局部变量的话。全局则自动初始化为NULL)。<br>char str[  ]里str是</em><strong>地址常量</strong>*，str的值是str[  ]的地址。</p>
 </li>
 <li><p>内存的分配方式：<br>内存分配可分为三种：静态存储区、栈区、堆区。</p>
 <ol>
@@ -465,7 +465,9 @@ char ch[] = “are”;
 </ol>
 </li>
 </ol>
-<p>例：<br>1.字符数组</p>
+<p>例：</p>
+<ol>
+<li><p>字符数组</p>
 <pre class="line-numbers language-none"><code class="language-none">#include &lt;stdio.h&gt;
 
 int main(void)
@@ -476,7 +478,9 @@ int main(void)
 	printf(&quot;%s\n&quot;,str);
  	return 0;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>运行结果：Hello<br>C语言规定，表达式如果是一个数组名，则代表的意思是该数组的起始地址，如果这个数组在一个函数中定义，如果以数组名返回时，<br>因为数组在函数中定义，是个局部变量，函数返回之后，这个数组所占用的空间就被释放掉了，数组也被破坏掉了，因此返回的数组名也就没有意义，<br>不能被其主调函数使用了。<br>2.指向字符串的指针</p>
+<p>运行结果：Hello<br>C语言规定，表达式如果是一个数组名，则自动转换为该数组的起始地址，如果这个数组在一个函数中定义，如果以数组名返回时，<br>因为数组在函数中定义，是个局部变量，函数返回之后，这个数组所占用的空间就被释放掉了，数组也被破坏掉了，因此返回的数组名也就没有意义，<br>不能被其主调函数使用了。</p>
+</li>
+<li><p>指向字符串的指针</p>
 <pre class="line-numbers language-none"><code class="language-none">#include &lt;stdio.h&gt;
 
 int main(void)
@@ -488,6 +492,8 @@ int main(void)
 	return 0;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：Segment Fault<br>这个表达式的意思是在动态变量区中开辟一个存放指针的存储单元，指针变量名是str,”hello”同样也是一个字符串常量，存储在常量区，在程序的运行过程中一直存在。把字符串“hello”的地址值拷贝到刚才的存储单元中，即指针变量str的初值是字符串“hello”的地址。</p>
+</li>
+</ol>
 <p>由此可见，使用1定义的字符串其字符是可以修改的，使用2定义的字符串其字符是不可以修改的。2可以成功编译和链接，但运行时可能会出现错误，运行结果为段错误（Segment Fault）。</p>
 <p>这两种表示字符串的方式的主要区别为：<br>字符串指针指向的内容是不可修改的（不可单个字符修改），字符数组是可以修改的，即2定义的字符串保存在常量区，是不可更改的，1定义的字符串保存在全局数据区或栈区，是可修改的。<br>————————————————<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45380951/article/details/120507572">https://blog.csdn.net/weixin_45380951/article/details/120507572</a></p>
 <h2 id="3-字符串存储方式不同"><a href="#3-字符串存储方式不同" class="headerlink" title="3. 字符串存储方式不同"></a>3. 字符串存储方式不同</h2><ul>
@@ -995,7 +1001,7 @@ int main(void)
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">8.8k</span>
+                        class="white-color">12.8k</span>
             
             
             

@@ -399,21 +399,21 @@ int entity &amp;#x3D; 3   &amp;#x2F;&amp;#x2F;entity(标识符&amp;#x2F;左">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-10-29
+                    2022-11-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.9k
+                    2.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    9 分
                 </div>
                 
 
@@ -579,11 +579,11 @@ main()
 </li>
 <li><p>register:只用于块作用域的变量声明中，请求最快速度访问该变量，同时，还保护了该变量的地址不被获取。</p>
 </li>
-<li><p>static:说明创建的对象存储期为静态存储期，但不改变其作用域。<br>因此，只有在块中，这种变量才能通过标识符访问。在其他块，可以通过地址访问。</p>
+<li><p>static:说明创建的对象存储期为静态存储期，但不改变其作用域。<br>因此，在块中使用时，只有在块中这种变量才能通过标识符访问。在其他块，可以通过地址访问。</p>
 </li>
 <li><p>extern：表明声明的变量定义在别处。</p>
 <h3 id="12）存储类别和函数"><a href="#12）存储类别和函数" class="headerlink" title="12）存储类别和函数"></a>12）存储类别和函数</h3><p>函数的存储类别：外部函数（默认），静态函数，内联函数。</p>
-<h2 id="二、随机函数和静态变量"><a href="#二、随机函数和静态变量" class="headerlink" title="二、随机函数和静态变量"></a>二、随机函数和静态变量</h2><h3 id="rand-函数"><a href="#rand-函数" class="headerlink" title="rand()函数"></a>rand()函数</h3></li>
+<h2 id="二、随机函数和静态变量"><a href="#二、随机函数和静态变量" class="headerlink" title="二、随机函数和静态变量"></a>二、随机函数和静态变量</h2><h3 id="1-rand-函数"><a href="#1-rand-函数" class="headerlink" title="1)rand()函数"></a>1)rand()函数</h3></li>
 <li><p>rand()不需要参数，它会返回一个从0到最大随机数的任意整数，最大随机数的大小通常是固定的一个大整数。</p>
 </li>
 <li><p>如果你要产生0<del>99这100个整数中的一个随机整数，可以表达为：int num = rand() % 100; 这样，num的值就是一个0</del>99中的一个随机数了。</p>
@@ -596,9 +596,71 @@ main()
 </li>
 <li><ul>
 <li>若要产生0-1之间的小数，则可以先取得0-10的整数，然后均除以10即可得到“随机到十分位”的10个随机小数。</li>
-<li>若要得到“随机到百分位”的随机小数，则需要先得到0~100的10个整数，然后均除以100，其它情况依 此类推。<h3 id=""><a href="#" class="headerlink" title=""></a></h3></li>
+<li>若要得到“随机到百分位”的随机小数，则需要先得到0~100的10个整数，然后均除以100，其它情况依 此类推。<h3 id="2-分配内存-malloc-、free-、calloc"><a href="#2-分配内存-malloc-、free-、calloc" class="headerlink" title="2)分配内存:malloc()、free()、calloc()"></a>2)分配内存:malloc()、free()、calloc()</h3></li>
 </ul>
 </li>
+<li><p>malloc()</p>
+</li>
+</ol>
+<ul>
+<li>用法：<pre class="line-numbers language-none"><code class="language-none">void* malloc(n * sizeof())<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>参数：  <ol>
+<li>表示字节数。例如，存6个double的数，需要6*sizeof(double)的字节数<blockquote>
+<p>malloc()要与free()配套使用。free()的参数为malloc()返回的地址，该函数释放malloc()分配的内存。</p>
+</blockquote>
+</li>
+</ol>
+</li>
+<li>返回值：动态分配内存块的首字节地址</li>
+</ul>
+<ol start="2">
+<li>创建数组的三种方法</li>
+</ol>
+<ul>
+<li>声明数组。可以为静态内存或自动内存</li>
+<li>声明变长数组。只能是自动内存</li>
+<li>声明指针。调用malloc(),将其返回值赋给指针。可以为静态内存或自动内存</li>
+</ul>
+<ol start="2">
+<li>calloc()</li>
+</ol>
+<ul>
+<li>用法：<pre class="line-numbers language-none"><code class="language-none">void *calloc(size_t nitems, size_t size)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>参数：<ol>
+<li>所需存储单元数量</li>
+<li>存储单元大小<pre class="line-numbers language-none"><code class="language-none">eg. void* calloc(100, sizeof (long))    &#x2F;&#x2F;100个4字节的存储单位(long为4字节)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ol>
+</li>
+<li>返回值：动态分配内存块的首字节地址</li>
+<li>与malloc()的不同：设置分配的内存为0。<h2 id="3）动态分配内存和变长数组"><a href="#3）动态分配内存和变长数组" class="headerlink" title="3）动态分配内存和变长数组"></a>3）动态分配内存和变长数组</h2></li>
+<li>与malloc()的对比：变长数组为自动储存类型，在创建多维数组时变长数组更方便<h2 id="4）存储类别和动态内存分配"><a href="#4）存储类别和动态内存分配" class="headerlink" title="4）存储类别和动态内存分配"></a>4）存储类别和动态内存分配</h2>理想化模型：内存分为三部分</li>
+</ul>
+<ol>
+<li>一部分供具有外部链接、内部链接和无链接的静态变量使用3154564654654</li>
+<li>一部分供自动变量使用</li>
+<li>一部分供动态内存分配<h2 id="5）ANSI-C类型限定符"><a href="#5）ANSI-C类型限定符" class="headerlink" title="5）ANSI C类型限定符"></a>5）ANSI C类型限定符</h2><h3 id="1-const"><a href="#1-const" class="headerlink" title="1.const"></a>1.const</h3>常用于声明函数的形参<pre class="line-numbers language-none"><code class="language-none">eg. 
+#include&lt;stdio.h&gt;	
+void function(int * a);
+void function(int a);
+int main()
+&#123;
+	int b &#x3D; 3;
+	int* c &#x3D; &amp;b;
+	function(c);	&#x2F;&#x2F;通过地址改变了b的值
+	function(b);	&#x2F;&#x2F;并未改变b的值，形参与实参的地址不同
+	printf(&quot;%d&quot;, b);
+
+	return 0;
+&#125;
+void function(int* a)
+&#123;
+	* a &#x3D; 1;
+&#125;
+void function(int a)
+&#123;
+	a &#x3D; 2;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-volatile"><a href="#2-volatile" class="headerlink" title="2.volatile"></a>2.volatile</h3><h3 id="3-restrict"><a href="#3-restrict" class="headerlink" title="3.restrict"></a>3.restrict</h3>仅用于指针，表明该指针时访问数据对象的唯一且初始的方式。<h3 id="4-Atomic"><a href="#4-Atomic" class="headerlink" title="4._Atomic"></a>4._Atomic</h3></li>
 </ol>
 
                 
@@ -1029,7 +1091,7 @@ main()
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">8.8k</span>
+                        class="white-color">12.8k</span>
             
             
             

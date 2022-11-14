@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>网络通信</title>
+      <link href="/2022/10/31/wang-luo-tong-xin/"/>
+      <url>/2022/10/31/wang-luo-tong-xin/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1）互联网的形成"><a href="#1）互联网的形成" class="headerlink" title="1）互联网的形成"></a>1）互联网的形成</h2><ol><li>少量<strong>计算机</strong>可以通过网线一一互联，形成局域网进行通信。<ol><li>HUB集线器（物理层）：将信息广播，通过CSMA/CD协议，其他计算机自行识别信息是否是传给自己的，是则接收，否则丢弃。<ul><li>优点：生产成本低</li><li>缺点：使用双绞线，当多台计算机同时发送信息时，电信号会杂糅，导致传输失败。</li></ul></li><li>SW交换机（数据链路层）：作用与HUB类似，但是SW有物理端口和MAC地址的映射关系表，交换机根据。<ul><li>优点：不需广播。全双工（现代网线），有多根线，同时发送数据不会产生冲突。<blockquote><p>映射表的建立：假设macA对应1号端口，macB对应2号端口。若A发送数据给B，SW首先查表，<br>若没有，则记录macA为1号端口，再查表，找不到B，于是广播，macB做出回应后，记录macB对应2号端口。</p></blockquote></li><li>一个端口可对应多个mac地址：当两台交换机进行桥接时，假设5号端口桥接了另一台交换机，则5号端口可能对应多个mac地址。</li><li>缺点：SW存储的交换关系有限，大量交换机相连会出现大规模泛洪，而且录满后新的地址会替掉旧的，因此只适用与一般规模的局域网</li></ul></li></ol></li><li>大量<strong>计算机</strong>通过链接同一<strong>路由器</strong>进行通信。<ol><li>IP地址：抽象地址，用来标识网络或标识设备，不能像mac地址一样进行直接通信。</li><li>路由器（网关）：</li></ol></li><li>少量<strong>路由器</strong>通过网线链接通信</li><li>大量<strong>路由器</strong>通过链接同一<strong>控制中心ISP</strong>（互联网服务供应商）<blockquote><p>路由器连着光猫，光猫连着光纤。光猫负责转换信号，把电脑的数字信号转换成适合在光纤传输的信号。</p></blockquote></li><li>各个区域的<strong>ISP</strong>进行链接，形成互联网</li></ol><ul><li>计算机 -&gt; 路由器 -&gt; 光猫 -&gt; ISP<blockquote><p>两种思想：转发和标识</p></blockquote></li></ul><h2 id="3）信息的传输"><a href="#3）信息的传输" class="headerlink" title="3）信息的传输"></a>3）信息的传输</h2><p><img src="%E4%BF%A1%E6%81%AF%E7%9A%84%E4%BC%A0%E8%BE%93.jpg" alt="信息的传输"><br>电脑在数据包上写好地址，传给路由器后，路由器只知道数据包终点为180.97.33.107，但是它并未与其直接相连，不知道如何到达该地址，<br>因此需要MAC地址<br><img src="%E4%BF%A1%E6%81%AF%E4%BC%A0%E8%BE%932.jpg" alt="信息传输2"><br>MAC地址是设备在出厂时就有的独特的地址。数据包到路由器后，MAC地址会更新为下一个设备,以此类推，知道传输完成。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习日记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 计算机网络 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>C函数</title>
       <link href="/2022/10/29/c-han-shu/"/>
       <url>/2022/10/29/c-han-shu/</url>

@@ -401,14 +401,14 @@ int main()
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-11-10
+                    2022-11-17
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    536
+                    544
                 </div>
                 
 
@@ -444,7 +444,7 @@ int main()
     int x;
     int result &#x3D; 0;
     printf(&quot;请输入一个整数：&quot;);
-    scanf(&quot;%d&quot;, &amp;x);
+    scanf_s(&quot;%d&quot;, &amp;x);
     while (x !&#x3D; 0)
     &#123;
         result &#x3D; result * 10 + x % 10;
@@ -487,25 +487,30 @@ int main()
 	printf(&quot;单词个数为%d\n大写字母个数为%d\n小写字母个数为%d&quot;, num,num2,num3);
 
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="3-三个嫌疑犯在法官面前各执一词，甲说：乙在说谎；乙说：丙在说谎；丙说：甲乙两人都在说谎。法官为了难，甲乙丙三人到底谁在说谎，谁说的是真话？"><a href="#3-三个嫌疑犯在法官面前各执一词，甲说：乙在说谎；乙说：丙在说谎；丙说：甲乙两人都在说谎。法官为了难，甲乙丙三人到底谁在说谎，谁说的是真话？" class="headerlink" title="3.三个嫌疑犯在法官面前各执一词，甲说：乙在说谎；乙说：丙在说谎；丙说：甲乙两人都在说谎。法官为了难，甲乙丙三人到底谁在说谎，谁说的是真话？"></a>3.三个嫌疑犯在法官面前各执一词，甲说：乙在说谎；乙说：丙在说谎；丙说：甲乙两人都在说谎。法官为了难，甲乙丙三人到底谁在说谎，谁说的是真话？</h3><p>~~~<br>#include &lt;stdio.h&gt;</p>
-<p>int main(int argc, char *argv[])</p>
-<p>{</p>
-<p>int a,b,c;</p>
-<p>for(a=0; a&lt;2; a++)</p>
-<p>for(b=0; b&lt;2; b++)</p>
-<p>for(c=0; c&lt;2; c++)</p>
-<pre><code>if((a&amp;&amp;!b || !a&amp;&amp;b) &amp;&amp; (b&amp;&amp;!c || !b&amp;&amp;c) &amp;&amp; (c &amp;&amp;a+b == 0 || !c&amp;&amp;a+b != 0))&#123;
-
-    printf(&quot;甲说的话是%s\n&quot;,a?&quot;真&quot;:&quot;假&quot;);
-    
-    printf(&quot;乙说的话是%s\n&quot;,b?&quot;真&quot;:&quot;假&quot;);
-    
-    printf(&quot;丙说的话是%s\n&quot;,c?&quot;真&quot;:&quot;假&quot;);
-
-&#125;
-</code></pre>
-<p>}</p>
-
+<h3 id="3-三个嫌疑犯在法官面前各执一词，甲说：乙在说谎；乙说：丙在说谎；丙说：甲乙两人都在说谎。法官为了难，甲乙丙三人到底谁在说谎，谁说的是真话？"><a href="#3-三个嫌疑犯在法官面前各执一词，甲说：乙在说谎；乙说：丙在说谎；丙说：甲乙两人都在说谎。法官为了难，甲乙丙三人到底谁在说谎，谁说的是真话？" class="headerlink" title="3.三个嫌疑犯在法官面前各执一词，甲说：乙在说谎；乙说：丙在说谎；丙说：甲乙两人都在说谎。法官为了难，甲乙丙三人到底谁在说谎，谁说的是真话？"></a>3.三个嫌疑犯在法官面前各执一词，甲说：乙在说谎；乙说：丙在说谎；丙说：甲乙两人都在说谎。法官为了难，甲乙丙三人到底谁在说谎，谁说的是真话？</h3><pre class="line-numbers language-none"><code class="language-none">#include &lt;stdio.h&gt;
+ 
+int main(int argc, char *argv[])
+ 
+&#123;
+ 
+int a,b,c;
+ 
+for(a&#x3D;0; a&lt;2; a++)
+ 
+for(b&#x3D;0; b&lt;2; b++)
+ 
+for(c&#x3D;0; c&lt;2; c++)
+ 
+	if((a&amp;&amp;!b || !a&amp;&amp;b) &amp;&amp; (b&amp;&amp;!c || !b&amp;&amp;c) &amp;&amp; (c &amp;&amp;a+b &#x3D;&#x3D; 0 || !c&amp;&amp;a+b !&#x3D; 0))&#123;
+	
+		printf(&quot;甲说的话是%s\n&quot;,a?&quot;真&quot;:&quot;假&quot;);
+		
+		printf(&quot;乙说的话是%s\n&quot;,b?&quot;真&quot;:&quot;假&quot;);
+		
+		printf(&quot;丙说的话是%s\n&quot;,c?&quot;真&quot;:&quot;假&quot;);
+	
+	&#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -934,7 +939,7 @@ int main()
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">12.8k</span>
+                        class="white-color">21.1k</span>
             
             
             

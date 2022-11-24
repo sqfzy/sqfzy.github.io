@@ -399,21 +399,21 @@ int entity &amp;#x3D; 3   &amp;#x2F;&amp;#x2F;entity(标识符&amp;#x2F;左">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-11-10
+                    2022-11-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.4k
+                    3.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    11 分
                 </div>
                 
 
@@ -456,7 +456,10 @@ int* pt &#x3D; &quot;abc&quot;  &#x2F;&#x2F;pt(标识符&#x2F;左值）指定一
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li>函数作用域<br>仅用于goto语句的标签，即是一个标签首次出现在函数的内层块中，它的作用域也延伸至整个函数，防止两个块中使用同一标签而显得混乱。</li>
 <li>函数原型作用域<br>用于函数原型中的形参名，范围是从形参定义处到原型声明结束。</li>
-<li>文件作用域<br>从变量的定义处到文件末尾<pre class="line-numbers language-none"><code class="language-none">#include&lt;stdio.h&gt;	
+<li>文件作用域<br>从变量的定义处到文件末尾<blockquote>
+<p>Tip：c语言函数以外（全局区、文件作用域）的初始化内容只能使用常量形式的初始化</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">#include&lt;stdio.h&gt;	
 int units &#x3D; 0;　　&#x2F;&#x2F;该变量具有文件作用域
 int main()
 &#123;
@@ -636,9 +639,28 @@ main()
 <li>与malloc()的对比：变长数组为自动储存类型，在创建多维数组时变长数组更方便<h2 id="4）存储类别和动态内存分配"><a href="#4）存储类别和动态内存分配" class="headerlink" title="4）存储类别和动态内存分配"></a>4）存储类别和动态内存分配</h2>理想化模型：内存分为三部分</li>
 </ul>
 <ol>
-<li>一部分供具有外部链接、内部链接和无链接的静态变量使用3154564654654</li>
-<li>一部分供自动变量使用</li>
-<li>一部分供动态内存分配<h2 id="5）ANSI-C类型限定符"><a href="#5）ANSI-C类型限定符" class="headerlink" title="5）ANSI C类型限定符"></a>5）ANSI C类型限定符</h2><h3 id="1-const"><a href="#1-const" class="headerlink" title="1.const"></a>1.const</h3>常用于声明函数的形参<pre class="line-numbers language-none"><code class="language-none">eg. 
+<li>一部分供具有外部链接、内部链接和无链接的静态变量使用<ul>
+<li>内存数量和变量的值在<strong>编译</strong>时确定</li>
+<li>变量在程序<strong>开始</strong>运行时被创建</li>
+<li>变量在程序<strong>结束</strong>时被销毁。 </li>
+<li>该类型内存通常作为栈来处理</li>
+</ul>
+</li>
+<li>一部分供自动变量使用<ul>
+<li>变量在程序进入定义所在块时被创建</li>
+<li>变量在程序离开块时消失</li>
+<li>该类型内存通常作为栈来处理</li>
+</ul>
+</li>
+<li>一部分供动态内存分配<ul>
+<li>调用malloc()等函数时存在</li>
+<li>调用free()后释放</li>
+<li>该类型内存的分配时随机分散的</li>
+</ul>
+</li>
+</ol>
+<h2 id="5）ANSI-C类型限定符"><a href="#5）ANSI-C类型限定符" class="headerlink" title="5）ANSI C类型限定符"></a>5）ANSI C类型限定符</h2><h3 id="1-const"><a href="#1-const" class="headerlink" title="1.const"></a>1.const</h3><p>常用于声明函数的形参</p>
+<pre class="line-numbers language-none"><code class="language-none">eg. 
 #include&lt;stdio.h&gt;	
 void function(int * a);
 void function(int a);
@@ -660,7 +682,48 @@ void function(int a)
 &#123;
 	a &#x3D; 2;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="2-volatile"><a href="#2-volatile" class="headerlink" title="2.volatile"></a>2.volatile</h3><h3 id="3-restrict"><a href="#3-restrict" class="headerlink" title="3.restrict"></a>3.restrict</h3>仅用于指针，表明该指针时访问数据对象的唯一且初始的方式。<h3 id="4-Atomic"><a href="#4-Atomic" class="headerlink" title="4._Atomic"></a>4._Atomic</h3></li>
+<h3 id="2-volatile"><a href="#2-volatile" class="headerlink" title="2.volatile"></a>2.volatile</h3><h3 id="3-restrict"><a href="#3-restrict" class="headerlink" title="3.restrict"></a>3.restrict</h3><p>仅用于指针，表明该指针时访问数据对象的唯一且初始的方式。</p>
+<h3 id="4-Atomic"><a href="#4-Atomic" class="headerlink" title="4._Atomic"></a>4._Atomic</h3><h1 id="三、内存"><a href="#三、内存" class="headerlink" title="三、内存"></a>三、内存</h1><h2 id="1）内存分配"><a href="#1）内存分配" class="headerlink" title="1）内存分配"></a>1）内存分配</h2><p>一个程序被加载到内存中，这块内存首先就存在两种属性：静态分配内存和动态分配内存。 </p>
+<ul>
+<li>静态分配内存：是在程序编译和链接时就确定好的内存。 </li>
+<li>动态分配内存：是在程序加载、调入、执行的时候分配/回收的内存。<h2 id="2）内存区域"><a href="#2）内存区域" class="headerlink" title="2）内存区域"></a>2）内存区域</h2>一般可以分为以下五个(不同编译器可能有不同)</li>
+</ul>
+<ol>
+<li><p>栈区（stack）：动态或静态分配。由编译器自动分配释放 ，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈。</p>
+<ol>
+<li>分配方式：动态或静态</li>
+<li>特点：内存连续，按内存地址由高到低方向生长，变量最大大小由编译时确定，速度快，但自由性差，最大空间不大。</li>
+<li>存储的变量：函数参数，局部变量</li>
+</ol>
+</li>
+<li><p>堆区（heap）： 动态分配。一般由程序员分配释放， 若程序员不释放，程序结束时可能由os回收 。注意它与数据结构中的堆是两回事，分配方式倒是类似于链表，呵呵。</p>
+<ol>
+<li>分配方式：动态</li>
+<li>特点：内存不连续(类似链表),</li>
+<li>存储的变量：用new，malloc，calloc，realloc等分配内存函数得到的变量</li>
+</ol>
+</li>
+<li><p>全局区（静态区）：全局变量和静态变量的存储是放在一块的，初始化的全局变量和静态变量在一块区域， 未初始化的全局变量和未初始化的静态变量在相邻的另一块区域。 - 程序结束后有系统释放。</p>
+<ol>
+<li>分配方式：静态</li>
+<li>特点：和“栈”一样，通常是用于那些在编译期间就能确定存储大小的变量的存储区</li>
+<li>存储的变量：全局变量和静态变量，初始化的放在一块，未初始化的放在另一块，二者相邻</li>
+</ol>
+</li>
+<li><p>文字常量区：常量字符串就是放在这里的。 程序结束后由系统释放。</p>
+<ol>
+<li>分配方式：静态</li>
+<li>特点：</li>
+<li>存储的变量：</li>
+</ol>
+</li>
+<li><p>程序代码：存放函数体的二进制代码。 </p>
+<ol>
+<li>分配方式：</li>
+<li>特点：</li>
+<li>存储的变量：</li>
+</ol>
+</li>
 </ol>
 
                 
@@ -1091,7 +1154,7 @@ void function(int a)
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">12.8k</span>
+                        class="white-color">21.1k</span>
             
             
             

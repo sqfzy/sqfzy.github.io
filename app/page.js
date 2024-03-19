@@ -6,7 +6,7 @@
 import { React, useState } from "react";
 import { Choices, Question } from "./Components";
 
-export default function DisabledAccordion() {
+export default function Home() {
   const [currQuestionId, setCurrQuestionId] = useState(0);
   const questions = [
     {

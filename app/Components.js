@@ -4,6 +4,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { recordAnswerCount, recordAnswerRight } from "./util";
 
 export function Question({
   id,
@@ -30,6 +31,7 @@ export function Question({
     // boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
   };
   const disabled = id > currQuestionId;
+
   // 如果当前问题是最后一个问题，将答对的数目存储到localStorage
   return (
     <div>
@@ -73,6 +75,7 @@ import { useRouter } from "next/navigation";
 // bingo: 选项选择完成后解锁下一个问题
 export function Choices({
   currQuestionId,
+  seq,
   choices,
   answer,
   bingo,
@@ -80,7 +83,7 @@ export function Choices({
 }) {
   const [value, setValue] = React.useState("");
   const [error, setError] = React.useState(false);
-  const [isAlertRight, setIsAlertRight] = React.useState(false);
+  const [basicAlert, setBasicAlert] = React.useState("info");
   const router = useRouter();
 
   useEffect(() => {
@@ -96,12 +99,17 @@ export function Choices({
     setError(false);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
+    recordAnswerCount(seq).then();
+
     if (value === answer) {
-      setIsAlertRight(true);
+      setBasicAlert("success");
       setError(false);
+
+      recordAnswerRight(seq).then();
+
       if (value === "A") {
         setAnswerContent(choices[0]);
       }
@@ -114,17 +122,28 @@ export function Choices({
       if (value === "D") {
         setAnswerContent(choices[3]);
       }
+
       setTimeout(() => {
         bingo();
       }, 300);
     } else if (value !== answer && value !== "") {
-      setIsAlertRight("Sorry, wrong answer!");
+      setBasicAlert("error");
       setError(true);
     } else {
-      setIsAlertRight("Please select an option.");
-      setError(true);
+      setBasicAlert("warn");
     }
   };
+
+  let alert = null;
+  if (basicAlert === "error") {
+    alert = <AlertError />;
+  } else if (basicAlert === "warn") {
+    alert = <AlertWarn />;
+  } else if (basicAlert === "success") {
+    alert = <AlertSuccess />;
+  } else if (basicAlert === "info") {
+    alert = <AlertInfo />;
+  }
 
   return (
     <form onSubmit={handleSubmit}>
@@ -152,9 +171,7 @@ export function Choices({
             label={choices[3]}
           />
         </RadioGroup>
-        <FormHelperText>
-          {isAlertRight ? <AlertRightAnswer /> : <AlertInfo />}
-        </FormHelperText>
+        <FormHelperText>{alert}</FormHelperText>
         <Button sx={{ mt: 1, mr: 1 }} type="submit" variant="outlined">
           Check Answer
         </Button>
@@ -166,7 +183,7 @@ export function Choices({
 import Alert from "@mui/material/Alert";
 import CheckIcon from "@mui/icons-material/Check";
 
-export function AlertRightAnswer() {
+export function AlertSuccess() {
   return (
     <Alert icon={<CheckIcon fontSize="inherit" />} severity="success">
       回答正确！ 👍
@@ -178,4 +195,12 @@ export function AlertInfo() {
   return (
     <Alert severity="info">每个人只有一次答题机会，请仔细思考答案哟 😊</Alert>
   );
+}
+
+export function AlertError() {
+  return <Alert severity="error">很遗憾，回答错误 😢</Alert>;
+}
+
+export function AlertWarn() {
+  return <Alert severity="warning">您必须选择一个答案 😐</Alert>;
 }

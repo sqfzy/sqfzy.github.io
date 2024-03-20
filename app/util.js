@@ -23,6 +23,9 @@ export async function recordAnswerCount(questionSeq) {
   } else {
     await kv.put(key, 1);
   }
+  console.log("recordAnswerCount");
+  console.log("key", key);
+  console.log("value", value);
 }
 
 // 记录题目的答对人数
@@ -35,4 +38,8 @@ export async function recordAnswerRight(questionSeq) {
   } else {
     await kv.put(key, 1);
   }
+
+  console.log("recordAnswerRight");
+  console.log("key", key);
+  console.log("value", value);
 }

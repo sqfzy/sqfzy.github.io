@@ -80,10 +80,9 @@ export function Choices({
 }) {
   const [value, setValue] = React.useState("");
   const [error, setError] = React.useState(false);
-  const [helperText, setHelperText] = React.useState("Choose wisely");
+  const [isAlertRight, setIsAlertRight] = React.useState(false);
   const router = useRouter();
 
-  console.log("currQuestionId", currQuestionId);
   useEffect(() => {
     if (currQuestionId === maxQuestionsNum || error) {
       localStorage.setItem("answerResult", currQuestionId);
@@ -93,7 +92,7 @@ export function Choices({
 
   const handleRadioChange = (event) => {
     setValue(event.target.value);
-    setHelperText(" ");
+    // setIsAlert();
     setError(false);
   };
 
@@ -101,7 +100,7 @@ export function Choices({
     event.preventDefault();
 
     if (value === answer) {
-      setHelperText("You got it!");
+      setIsAlertRight(true);
       setError(false);
       if (value === "A") {
         setAnswerContent(choices[0]);
@@ -115,12 +114,14 @@ export function Choices({
       if (value === "D") {
         setAnswerContent(choices[3]);
       }
-      bingo();
+      setTimeout(() => {
+        bingo();
+      }, 300);
     } else if (value !== answer && value !== "") {
-      setHelperText("Sorry, wrong answer!");
+      setIsAlertRight("Sorry, wrong answer!");
       setError(true);
     } else {
-      setHelperText("Please select an option.");
+      setIsAlertRight("Please select an option.");
       setError(true);
     }
   };
@@ -151,11 +152,30 @@ export function Choices({
             label={choices[3]}
           />
         </RadioGroup>
-        <FormHelperText>{helperText}</FormHelperText>
+        <FormHelperText>
+          {isAlertRight ? <AlertRightAnswer /> : <AlertInfo />}
+        </FormHelperText>
         <Button sx={{ mt: 1, mr: 1 }} type="submit" variant="outlined">
           Check Answer
         </Button>
       </FormControl>
     </form>
+  );
+}
+
+import Alert from "@mui/material/Alert";
+import CheckIcon from "@mui/icons-material/Check";
+
+export function AlertRightAnswer() {
+  return (
+    <Alert icon={<CheckIcon fontSize="inherit" />} severity="success">
+      回答正确！ 👍
+    </Alert>
+  );
+}
+
+export function AlertInfo() {
+  return (
+    <Alert severity="info">每个人只有一次答题机会，请仔细思考答案哟 😊</Alert>
   );
 }

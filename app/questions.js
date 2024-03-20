@@ -7,7 +7,8 @@ export const questions = [
       "有色无味",
       "有刺激性气味"
     ],
-    "answer": "D"
+    "answer": "D",
+    "seq": 0
   },
   {
     "question": "哪种家具材料是甲醛的主要来源？",
@@ -17,7 +18,8 @@ export const questions = [
       "金属",
       "玻璃"
     ],
-    "answer": "B"
+    "answer": "B",
+    "seq": 1
   },
   {
     "question": "装修后多长时间内甲醛释放量最大？",
@@ -27,7 +29,8 @@ export const questions = [
       "几个月",
       "几年"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 2
   },
   {
     "question": "甲醛的职业暴露限制通常是多少？",
@@ -37,7 +40,8 @@ export const questions = [
       "1mg/m³",
       "5mg/m³"
     ],
-    "answer": "A"
+    "answer": "A",
+    "seq": 3
   },
   {
     "question": "哪种植物被认为可以吸收甲醛？",
@@ -47,7 +51,8 @@ export const questions = [
       "玫瑰",
       "郁金香"
     ],
-    "answer": "B"
+    "answer": "B",
+    "seq": 4
   },
   {
     "question": "如何检测室内甲醛浓度？",
@@ -57,7 +62,8 @@ export const questions = [
       "观察家具颜色",
       "用手触摸"
     ],
-    "answer": "A"
+    "answer": "A",
+    "seq": 5
   },
   {
     "question": "甲醛对人体哪个系统的影响最大？",
@@ -67,7 +73,8 @@ export const questions = [
       "呼吸系统",
       "骨骼系统"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 6
   },
   {
     "question": "醛的沸点是多少？",
@@ -77,7 +84,8 @@ export const questions = [
       "100℃",
       "200℃"
     ],
-    "answer": "A"
+    "answer": "A",
+    "seq": 7
   },
   {
     "question": "甲醛是否溶于水？",
@@ -85,7 +93,8 @@ export const questions = [
       "是",
       "否"
     ],
-    "answer": "A"
+    "answer": "A",
+    "seq": 8
   },
   {
     "question": " 如何预防甲醛污染？",
@@ -95,7 +104,8 @@ export const questions = [
       "选择无甲醛或低甲醛释放的家具",
       "频繁使用清洁剂"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 9
   },
   {
     "question": " 甲醛在环境中的稳定性如何？",
@@ -105,7 +115,8 @@ export const questions = [
       "完全不稳定",
       "完全稳定"
     ],
-    "answer": "B"
+    "answer": "B",
+    "seq": 10
   },
   {
     "question": " 甲醛的密度与空气相比如何？",
@@ -115,7 +126,8 @@ export const questions = [
       "等于空气",
       "无法确定"
     ],
-    "answer": "A"
+    "answer": "A",
+    "seq": 11
   },
   {
     "question": " 甲醛的急性毒性表现是什么？",
@@ -125,7 +137,8 @@ export const questions = [
       "腹泻",
       "咳嗽"
     ],
-    "answer": "A"
+    "answer": "A",
+    "seq": 12
   },
   {
     "question": " 甲醛是否可以通过食物摄入？",
@@ -133,7 +146,8 @@ export const questions = [
       "是",
       "否"
     ],
-    "answer": "A"
+    "answer": "A",
+    "seq": 13
   },
   {
     "question": "如何判断家中甲醛是否超标？",
@@ -143,7 +157,8 @@ export const questions = [
       "观察家具颜色",
       "询问邻居"
     ],
-    "answer": "B"
+    "answer": "B",
+    "seq": 14
   },
   {
     "question": " 甲醛的CAS号是多少？",
@@ -153,7 +168,8 @@ export const questions = [
       "100-40-1",
       "123-33-9"
     ],
-    "answer": "B"
+    "answer": "B",
+    "seq": 15
   },
   {
     "question": " 甲醛在哪些工业过程中被使用？",
@@ -163,7 +179,8 @@ export const questions = [
       "家具制造",
       "所有上述选项"
     ],
-    "answer": "D"
+    "answer": "D",
+    "seq": 16
   },
   {
     "question": " 如何减少室内甲醛浓度？",
@@ -173,7 +190,8 @@ export const questions = [
       "使用甲醛吸附剂",
       "增加家具数量"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 17
   },
   {
     "question": " 甲醛的分子质量是多少？",
@@ -183,7 +201,8 @@ export const questions = [
       "44.05",
       "60.08"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 18
   },
   {
     "question": " 哪种情况下室内甲醛浓度可能较高？",
@@ -193,7 +212,8 @@ export const questions = [
       "室内湿度高",
       "室内光线充足"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 19
   },
   {
     "question": "甲醛的主要健康风险是什么？",
@@ -203,7 +223,8 @@ export const questions = [
       "糖尿病",
       "肝病"
     ],
-    "answer": "B"
+    "answer": "B",
+    "seq": 20
   },
   {
     "question": "甲醛的CAS号是多少？",
@@ -213,7 +234,8 @@ export const questions = [
       "100-40-1",
       "123-33-9"
     ],
-    "answer": "B"
+    "answer": "B",
+    "seq": 21
   },
   {
     "question": "孕妇接触甲醛可能导致的健康问题是？",
@@ -223,7 +245,8 @@ export const questions = [
       "早产",
       "新生儿体重不足"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 22
   },
   {
     "question": "以下哪种方法不能用于检测室内甲醛浓度？",
@@ -233,7 +256,8 @@ export const questions = [
       "使用甲醛检测试剂盒",
       "聘请专业机构进行检测"
     ],
-    "answer": "B"
+    "answer": "B",
+    "seq": 23
   },
   {
     "question": " 以下哪种措施对于预防甲醛污染最有效？",
@@ -243,7 +267,8 @@ export const questions = [
       "选择无甲醛或低甲醛释放的家具",
       "使用香水掩盖气味"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 24
   },
   {
     "question": "甲醛是否溶于水？",
@@ -251,7 +276,8 @@ export const questions = [
       "是",
       "否"
     ],
-    "answer": "A"
+    "answer": "A",
+    "seq": 25
   },
   {
     "question": " 以下哪种方法不能用于减少室内甲醛浓度？",
@@ -261,7 +287,8 @@ export const questions = [
       "关闭门窗，减少空气流通",
       "选择甲醛含量低的家具"
     ],
-    "answer": ""
+    "answer": "",
+    "seq": 26
   },
   {
     "question": "问题： 空气污染主要是由于什么引起的？",
@@ -271,7 +298,8 @@ export const questions = [
       "人类活动",
       "地震"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 27
   },
   {
     "question": "问题： PM2.5指的是什么？",
@@ -281,7 +309,8 @@ export const questions = [
       "颗粒直径小于2.5厘米的污染物",
       "颗粒直径小于2.5纳米的污染物"
     ],
-    "answer": "B"
+    "answer": "B",
+    "seq": 28
   },
   {
     "question": "问题： 下列哪项不是空气污染的来源？",
@@ -291,7 +320,8 @@ export const questions = [
       "自然火灾",
       "雨水"
     ],
-    "answer": "D"
+    "answer": "D",
+    "seq": 29
   },
   {
     "question": "问题： 臭氧层的主要作用是什么？",
@@ -301,7 +331,8 @@ export const questions = [
       "反射太阳光",
       "储存热能"
     ],
-    "answer": "A"
+    "answer": "A",
+    "seq": 30
   },
   {
     "question": "问题： 光化学烟雾主要是由于什么引起的？",
@@ -311,7 +342,8 @@ export const questions = [
       "自然火灾",
       "核爆炸"
     ],
-    "answer": "A"
+    "answer": "A",
+    "seq": 31
   },
   {
     "question": "问题： 空气污染对植物的主要影响是什么？",
@@ -321,7 +353,8 @@ export const questions = [
       "无影响",
       "使植物产生毒素"
     ],
-    "answer": "B"
+    "answer": "B",
+    "seq": 32
   },
   {
     "question": "问题： 下列哪项措施有助于减少空气污染？",
@@ -331,7 +364,8 @@ export const questions = [
       "推广清洁能源",
       "增加化工生产"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 33
   },
   {
     "question": "问题： SO2排放过多会导致什么环境问题？",
@@ -341,7 +375,8 @@ export const questions = [
       "臭氧层破坏",
       "土地沙漠化"
     ],
-    "answer": "A"
+    "answer": "A",
+    "seq": 34
   },
   {
     "question": "问题： 下列哪项不是空气污染物？",
@@ -351,7 +386,8 @@ export const questions = [
       "二氧化碳",
       "颗粒物"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 35
   },
   {
     "question": "问题： 哪个城市通常被认为是世界上空气污染最严重的城市之一？",
@@ -361,7 +397,8 @@ export const questions = [
       "新德里",
       "洛杉矶"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 36
   },
   {
     "question": "问题： 空气污染对健康的主要影响是什么？",
@@ -371,7 +408,8 @@ export const questions = [
       "引发呼吸道疾病",
       "提高睡眠质量"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 37
   },
   {
     "question": "问题： 酸雨主要是由于什么引起的？",
@@ -381,7 +419,8 @@ export const questions = [
       "森林砍伐",
       "核污染"
     ],
-    "answer": "A"
+    "answer": "A",
+    "seq": 38
   },
   {
     "question": "问题： 下列哪项不是减少空气污染的个人行为？",
@@ -391,7 +430,8 @@ export const questions = [
       "焚烧垃圾",
       "选择使用环保产品"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 39
   },
   {
     "question": "问题： 空气污染指数（AQI）是用来衡量什么的？",
@@ -401,7 +441,8 @@ export const questions = [
       "天气状况",
       "空气质量"
     ],
-    "answer": "B"
+    "answer": "B",
+    "seq": 40
   },
   {
     "question": "问题： 下列哪项不是空气污染对动物的影响？",
@@ -411,7 +452,8 @@ export const questions = [
       "提高免疫力",
       "导致疾病"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 41
   },
   {
     "question": "问题： 哪个国家通常被认为是空气污染治理效果较好的国家？",
@@ -421,7 +463,8 @@ export const questions = [
       "瑞典",
       "美国"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 42
   },
   {
     "question": "问题： 什么是“蓝天保卫战”？",
@@ -431,7 +474,8 @@ export const questions = [
       "一项科学实验",
       "一项体育比赛"
     ],
-    "answer": "B"
+    "answer": "B",
+    "seq": 43
   },
   {
     "question": "问题： 下列哪项措施不能有效减少空气污染？",
@@ -441,7 +485,8 @@ export const questions = [
       "发展绿色能源",
       "提高能源利用效率"
     ],
-    "answer": "B"
+    "answer": "B",
+    "seq": 44
   },
   {
     "question": "问题： 大气中的哪种气体与全球变暖关系最为密切？",
@@ -451,7 +496,8 @@ export const questions = [
       "氮气",
       "甲烷"
     ],
-    "answer": "A"
+    "answer": "A",
+    "seq": 45
   },
   {
     "question": "问题： 空气污染会导致哪种全球性问题？",
@@ -461,7 +507,8 @@ export const questions = [
       "气候变化",
       "地震频发"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 46
   },
   {
     "question": "问题： 大气中的哪种气体与全球变暖关系最为密切？",
@@ -471,7 +518,8 @@ export const questions = [
       "氮氧化物",
       "臭氧"
     ],
-    "answer": "B"
+    "answer": "B",
+    "seq": 47
   },
   {
     "question": "问题： 如何有效减少室内空气污染？",
@@ -481,7 +529,8 @@ export const questions = [
       "使用空气净化器",
       "频繁使用清洁剂"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 48
   },
   {
     "question": "以下哪项措施不能有效减少空气污染？",
@@ -491,7 +540,8 @@ export const questions = [
       "发展绿色能源",
       "提高能源利用效率"
     ],
-    "answer": "B"
+    "answer": "B",
+    "seq": 49
   },
   {
     "question": "污水处理的主要目的是什么？",
@@ -501,7 +551,8 @@ export const questions = [
       "去除污染物",
       "改变水的颜色"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 50
   },
   {
     "question": "BOD代表什么？",
@@ -511,7 +562,8 @@ export const questions = [
       "溶解氧",
       "总悬浮物"
     ],
-    "answer": "A"
+    "answer": "A",
+    "seq": 51
   },
   {
     "question": "COD表示什么？",
@@ -521,7 +573,8 @@ export const questions = [
       "溶解氧",
       "生物需氧量"
     ],
-    "answer": "B"
+    "answer": "B",
+    "seq": 52
   },
   {
     "question": "污水处理中常用的初级处理方法是什么？",
@@ -531,7 +584,8 @@ export const questions = [
       "沉淀",
       "氯化"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 53
   },
   {
     "question": "下列哪项不是污水处理中的二级处理方法？",
@@ -541,7 +595,8 @@ export const questions = [
       "沉淀法",
       "曝气池法"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 54
   },
   {
     "question": "污水处理中的曝气主要是为了什么？",
@@ -551,7 +606,8 @@ export const questions = [
       "增加水中溶解氧",
       "减少水的pH值"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 55
   },
   {
     "question": "污泥回流的主要目的是什么？",
@@ -561,7 +617,8 @@ export const questions = [
       "降低处理成本",
       "增加污泥浓度"
     ],
-    "answer": "B"
+    "answer": "B",
+    "seq": 56
   },
   {
     "question": "在污水处理中，格栅的主要作用是什么？",
@@ -571,7 +628,8 @@ export const questions = [
       "去除大颗粒悬浮物",
       "增加水中溶解氧"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 57
   },
   {
     "question": "活性污泥法中的污泥是如何形成的？",
@@ -581,7 +639,8 @@ export const questions = [
       "化学沉淀",
       "物理吸附"
     ],
-    "answer": "B"
+    "answer": "B",
+    "seq": 58
   },
   {
     "question": "下列哪项不是污水处理的三级处理方法？",
@@ -591,7 +650,8 @@ export const questions = [
       "沉淀",
       "活性炭吸附"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 59
   },
   {
     "question": "污水处理中为什么要进行污泥脱水？",
@@ -601,7 +661,8 @@ export const questions = [
       "提高污泥的BOD",
       "降低污泥的COD"
     ],
-    "answer": "A"
+    "answer": "A",
+    "seq": 60
   },
   {
     "question": "MBR工艺是什么的缩写？",
@@ -611,7 +672,8 @@ export const questions = [
       "沉淀法",
       "过滤法"
     ],
-    "answer": "A"
+    "answer": "A",
+    "seq": 61
   },
   {
     "question": "污水处理后，出水中的氨氮含量通常应控制在多少mg/L以下？",
@@ -621,7 +683,8 @@ export const questions = [
       "15",
       "20"
     ],
-    "answer": "B"
+    "answer": "B",
+    "seq": 62
   },
   {
     "question": "污水处理中的A2O工艺是什么？",
@@ -631,7 +694,8 @@ export const questions = [
       "沉淀法",
       "过滤法"
     ],
-    "answer": "A"
+    "answer": "A",
+    "seq": 63
   },
   {
     "question": "在污水处理中，什么参数通常用来衡量水质的营养化程度？",
@@ -641,7 +705,8 @@ export const questions = [
       "总磷",
       "总氮"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 64
   },
   {
     "question": "污水处理中，什么方法主要用于去除溶解性的有机物？",
@@ -651,7 +716,8 @@ export const questions = [
       "三级处理",
       "深度处理"
     ],
-    "answer": "B"
+    "answer": "B",
+    "seq": 65
   },
   {
     "question": "污水中的什么物质会导致水体富营养化？",
@@ -661,7 +727,8 @@ export const questions = [
       "总磷",
       "COD"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 66
   },
   {
     "question": "活性污泥法中的曝气池主要目的是什么？",
@@ -671,7 +738,8 @@ export const questions = [
       "降低水温",
       "去除重金属"
     ],
-    "answer": "A"
+    "answer": "A",
+    "seq": 67
   },
   {
     "question": "污水处理中的沉淀池主要用于去除什么？",
@@ -681,7 +749,8 @@ export const questions = [
       "悬浮物",
       "微生物"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 68
   },
   {
     "question": "污水处理厂的污泥通常含有什么成分？",
@@ -691,7 +760,8 @@ export const questions = [
       "微生物",
       "所有以上成分"
     ],
-    "answer": "D"
+    "answer": "D",
+    "seq": 69
   },
   {
     "question": "污水中的悬浮物通常通过什么方法去除？",
@@ -701,7 +771,8 @@ export const questions = [
       "沉淀",
       "氯化"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 70
   },
   {
     "question": "在污水处理中，什么是SVI？",
@@ -711,7 +782,8 @@ export const questions = [
       "污泥活性指数",
       "污泥浓度指数"
     ],
-    "answer": "B"
+    "answer": "B",
+    "seq": 71
   },
   {
     "question": "在污水处理中，哪种工艺可以有效去除氮？",
@@ -721,7 +793,8 @@ export const questions = [
       "MBR工艺",
       "初级沉淀"
     ],
-    "answer": "B"
+    "answer": "B",
+    "seq": 72
   },
   {
     "question": "污水处理中，BOD5代表什么？",
@@ -731,7 +804,8 @@ export const questions = [
       "五日生物降解量",
       "五日溶解氧"
     ],
-    "answer": "A"
+    "answer": "A",
+    "seq": 73
   },
   {
     "question": "CODcr是指什么？",
@@ -741,7 +815,8 @@ export const questions = [
       "化学需氧量（高锰酸钾法）",
       "化学需氧量（氯法）"
     ],
-    "answer": "A"
+    "answer": "A",
+    "seq": 74
   },
   {
     "question": "污泥厌氧消化主要产生什么气体？",
@@ -751,7 +826,8 @@ export const questions = [
       "甲烷",
       "二氧化碳"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 75
   },
   {
     "question": "污水厂产生的栅渣属于哪类固体废物？",
@@ -761,7 +837,8 @@ export const questions = [
       "生活垃圾",
       "建筑垃圾"
     ],
-    "answer": "A"
+    "answer": "A",
+    "seq": 76
   },
   {
     "question": "污水中的重金属主要通过什么方法去除？",
@@ -771,7 +848,8 @@ export const questions = [
       "吸附法",
       "所有以上方法"
     ],
-    "answer": "D"
+    "answer": "D",
+    "seq": 77
   },
   {
     "question": "污水处理中，什么是SVI30？",
@@ -781,7 +859,8 @@ export const questions = [
       "30分钟污泥活性指数",
       "30分钟污泥浓度指数"
     ],
-    "answer": "B"
+    "answer": "B",
+    "seq": 78
   },
   {
     "question": "下列哪种指标不用于评估污水处理的效果？",
@@ -791,7 +870,8 @@ export const questions = [
       "氨氮去除率",
       "污水颜色"
     ],
-    "answer": "D"
+    "answer": "D",
+    "seq": 79
   },
   {
     "question": "在污水处理中，活性污泥的MLSS通常表示什么？",
@@ -801,7 +881,8 @@ export const questions = [
       "混合液有机物浓度",
       "混合液氮磷浓度"
     ],
-    "answer": "A"
+    "answer": "A",
+    "seq": 80
   },
   {
     "question": "MBR工艺中的膜组件主要用于什么？",
@@ -811,7 +892,8 @@ export const questions = [
       "截留溶解性物质和微生物",
       "增加水中溶解氧"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 81
   },
   {
     "question": "污水厂排放的尾水应满足什么标准？",
@@ -821,7 +903,8 @@ export const questions = [
       "生活饮用水标准",
       "农业灌溉用水标准"
     ],
-    "answer": "A"
+    "answer": "A",
+    "seq": 82
   },
   {
     "question": "污水处理中，什么是曝气池的有效水深？",
@@ -831,7 +914,8 @@ export const questions = [
       "曝气池内水体的平均深度",
       "曝气池内水体的最大深度"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 83
   },
   {
     "question": "在污水处理中，为什么需要对污泥进行浓缩？",
@@ -841,7 +925,8 @@ export const questions = [
       "增加污泥的有机成分",
       "降低污泥的含水率"
     ],
-    "answer": "A"
+    "answer": "A",
+    "seq": 84
   },
   {
     "question": "污泥稳定化处理的主要目的是什么？",
@@ -851,7 +936,8 @@ export const questions = [
       "消除污泥中的有毒有害物质",
       "提高污泥的BOD"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 85
   },
   {
     "question": "污水处理中，什么是初沉池？",
@@ -861,7 +947,8 @@ export const questions = [
       "用于去除重金属的沉淀池",
       "用于去除氮磷的沉淀池"
     ],
-    "answer": "A"
+    "answer": "A",
+    "seq": 86
   },
   {
     "question": "在污水处理中，格栅的间隙大小主要取决于什么？",
@@ -871,7 +958,8 @@ export const questions = [
       "进水中悬浮物的大小",
       "进水的pH值"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 87
   },
   {
     "question": "活性污泥法中，污泥回流的主要目的是什么？",
@@ -881,7 +969,8 @@ export const questions = [
       "减少能耗",
       "降低污泥产量"
     ],
-    "answer": "A"
+    "answer": "A",
+    "seq": 88
   },
   {
     "question": "污水处理中，什么是生物滤池？",
@@ -891,7 +980,8 @@ export const questions = [
       "利用物理吸附进行污水处理的构筑物",
       "利用化学沉淀进行污水处理的构筑物"
     ],
-    "answer": "A"
+    "answer": "A",
+    "seq": 89
   },
   {
     "question": "下列哪项不是环保的基本原则？",
@@ -901,7 +991,8 @@ export const questions = [
       "公众参与",
       "损害担责"
     ],
-    "answer": "B"
+    "answer": "B",
+    "seq": 90
   },
   {
     "question": "“绿色出行”主要指的是什么？",
@@ -911,7 +1002,8 @@ export const questions = [
       "使用公共交通工具出行",
       "随意选择出行方式"
     ],
-    "answer": "A"
+    "answer": "A",
+    "seq": 91
   },
   {
     "question": "哪种能源被认为是可再生能源？",
@@ -921,7 +1013,8 @@ export const questions = [
       "太阳能",
       "核能"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 92
   },
   {
     "question": "环保中的“白色污染”主要指的是什么？",
@@ -931,7 +1024,8 @@ export const questions = [
       "白色烟雾污染",
       "白色水体污染"
     ],
-    "answer": "B"
+    "answer": "B",
+    "seq": 93
   },
   {
     "question": "酸雨的主要来源是什么？",
@@ -941,7 +1035,8 @@ export const questions = [
       "土壤污染",
       "噪音污染"
     ],
-    "answer": "A"
+    "answer": "A",
+    "seq": 94
   },
   {
     "question": "哪种行为有助于减少温室气体的排放？",
@@ -951,7 +1046,8 @@ export const questions = [
       "使用节能电器",
       "频繁更换电子产品"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 95
   },
   {
     "question": "环保中的“碳中和”是指什么？",
@@ -961,7 +1057,8 @@ export const questions = [
       "通过植树造林等方式，抵消自身产生的二氧化碳排放量",
       "增加碳的存储量"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 96
   },
   {
     "question": "下列哪项措施对于减少水资源浪费最有效？",
@@ -971,7 +1068,8 @@ export const questions = [
       "修理漏水的管道",
       "减少洗澡次数"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 97
   },
   {
     "question": "垃圾分类的主要目的是什么？",
@@ -981,7 +1079,8 @@ export const questions = [
       "提高垃圾处理效率",
       "增加垃圾处理成本"
     ],
-    "answer": "C"
+    "answer": "C",
+    "seq": 98
   },
   {
     "question": " 下列哪项不是常见的环保做法？",
@@ -991,6 +1090,7 @@ export const questions = [
       "回收利用废弃物",
       "减少使用一次性塑料制品"
     ],
-    "answer": "B"
+    "answer": "B",
+    "seq": 99
   }
 ];

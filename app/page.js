@@ -5,7 +5,7 @@ import styles from "./page.module.css";
 import React, { useEffect, useState } from "react";
 import { Choices, Question } from "./Components";
 import { questions } from "./questions";
-import { generateRandomNumbers } from "./util";
+import { generateRandomNumbers, recordAnswerCount } from "./util";
 import { useRouter } from "next/navigation";
 
 export const maxQuestionsNum = 20;
@@ -55,26 +55,31 @@ export default function Home() {
   return (
     <div className={styles.center}>
       <div style={{ width: 1200 }}>
-        {randomQuestions.map((question) => (
-          <Question
-            key={question.id}
-            id={question.id}
-            expanded_id={expanded}
-            question={question.question}
-            currQuestionId={currQuestionId}
-            onChance={handleChange(question.id)}
-          >
-            <Choices
-              currQuestionId={currQuestionId}
-              choices={question.choices}
-              answer={question.answer}
-              bingo={() => {
-                setExpanded((prevId) => prevId + 1);
-                setCurrQuestionId((prevId) => prevId + 1);
-              }}
-            />
-          </Question>
-        ))}
+        {randomQuestions.map(
+          (question) => (
+            recordAnswerCount(question.id),
+            (
+              <Question
+                key={question.id}
+                id={question.id}
+                expanded_id={expanded}
+                question={question.question}
+                currQuestionId={currQuestionId}
+                onChance={handleChange(question.id)}
+              >
+                <Choices
+                  currQuestionId={currQuestionId}
+                  choices={question.choices}
+                  answer={question.answer}
+                  bingo={() => {
+                    setExpanded((prevId) => prevId + 1);
+                    setCurrQuestionId((prevId) => prevId + 1);
+                  }}
+                />
+              </Question>
+            )
+          ),
+        )}
       </div>
     </div>
   );

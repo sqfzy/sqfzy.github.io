@@ -34,9 +34,9 @@ if (currentQuestion.question) {
   questions.push(currentQuestion);
 }
 
-// for (let i = 0; i < questions.length; i++) {
-//   questions[i].id = i;
-// }
+for (let i = 0; i < questions.length; i++) {
+  questions[i].seq = i;
+}
 
 console.log(questions);
 

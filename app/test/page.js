@@ -1,11 +1,11 @@
 "use client";
 
-import "./globals.css";
-import styles from "./page.module.css";
+import "../globals.css";
+import styles from "../page.module.css";
 import React, { useEffect, useState } from "react";
-import { Choices, Question } from "./Components";
-import { questions } from "./questions";
-import { generateRandomNumbers } from "./util";
+import { Choices, Question } from "../Components";
+import { questions } from "../questions";
+import { generateRandomNumbers } from "../util";
 import { useRouter } from "next/navigation";
 
 export const maxQuestionsNum = 20;
@@ -13,15 +13,15 @@ export const maxQuestionsNum = 20;
 export default function Home() {
   const router = useRouter();
 
-  useEffect(() => {
-    // 检查用户是否已答题
-    const answerResult = localStorage.getItem("answerResult");
-
-    if (answerResult) {
-      // 如果用户已答题，重定向到指定页面
-      router.push("answer-result");
-    }
-  }, [router]);
+  // useEffect(() => {
+  //   // 检查用户是否已答题
+  //   const answerResult = localStorage.getItem("answerResult");
+  //
+  //   if (answerResult) {
+  //     // 如果用户已答题，重定向到指定页面
+  //     router.push("answer-result");
+  //   }
+  // }, [router]);
 
   const [currQuestionId, setCurrQuestionId] = useState(0);
   const [randomQuestions, setRandomQuestions] = useState([]);

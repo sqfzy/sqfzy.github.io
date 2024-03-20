@@ -1,28 +1,57 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-export function Question({ id, question, currQuestionId, children }) {
-  let disabled = id > currQuestionId;
+export function Question({
+  id,
+  expanded_id,
+  question,
+  currQuestionId,
+  children,
+  onChance,
+}) {
+  const [answerContent, setAnswerContent] = React.useState("");
+
+  const setAnswer = (content) => {
+    setAnswerContent(content);
+  };
+
+  let enhancedChildren = React.cloneElement(children, {
+    setAnswerContent: setAnswer,
+  });
+
+  const expandedStyle = {
+    // backgroundColor: "#f0f0f0", // 选择一个突出的颜色
+    borderRadius: "4px",
+    margin: "8px 0",
+    // boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
+  };
+  const disabled = id > currQuestionId;
+  // 如果当前问题是最后一个问题，将答对的数目存储到localStorage
   return (
     <div>
-      <Accordion disabled={disabled}>
+      <Accordion
+        disabled={disabled}
+        expanded={id === expanded_id}
+        onChange={onChance}
+        style={id === expanded_id ? expandedStyle : {}}
+      >
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls={id}
           id={id}
         >
-          <Typography sx={{ width: "33%", flexShrink: 0 }}>
+          <Typography sx={{ width: "50%", flexShrink: 0, marginRight: 4 }}>
             {question}
           </Typography>
           <Typography sx={{ color: "text.secondary" }}>
-            I am an accordion
+            {answerContent}
           </Typography>
         </AccordionSummary>
-        <AccordionDetails>{children}</AccordionDetails>
+        <AccordionDetails>{enhancedChildren}</AccordionDetails>
       </Accordion>
     </div>
   );
@@ -34,18 +63,34 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import FormHelperText from "@mui/material/FormHelperText";
 import Button from "@mui/material/Button";
+import { BorderAll } from "@mui/icons-material";
+import { maxQuestionsNum } from "./page";
+import { useRouter } from "next/navigation";
 
 // @Params
 // choices: 选项描述
 // right_choice_num: 正确选项的序号
-// onComplete: 选项选择完成后解锁下一个问题
-export function Choices({ choices, right_choice_num, onComplete }) {
+// bingo: 选项选择完成后解锁下一个问题
+export function Choices({
+  currQuestionId,
+  choices,
+  answer,
+  bingo,
+  setAnswerContent,
+}) {
   const [value, setValue] = React.useState("");
   const [error, setError] = React.useState(false);
   const [helperText, setHelperText] = React.useState("Choose wisely");
+  const router = useRouter();
 
-  let choicesValues = ["wrong0", "wrong1", "wrong2", "wrong3"];
-  choicesValues[right_choice_num] = "right";
+  console.log("currQuestionId", currQuestionId);
+  useEffect(() => {
+    if (currQuestionId === maxQuestionsNum || error) {
+      localStorage.setItem("answerResult", currQuestionId);
+      console.log("should work", localStorage.getItem("answerResult"));
+      router.push("answer-result");
+    }
+  }, [currQuestionId, error, router, maxQuestionsNum]);
 
   const handleRadioChange = (event) => {
     setValue(event.target.value);
@@ -56,11 +101,23 @@ export function Choices({ choices, right_choice_num, onComplete }) {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (value === "right") {
+    if (value === answer) {
       setHelperText("You got it!");
       setError(false);
-      onComplete();
-    } else if (value.startsWith("wrong")) {
+      if (value === "A") {
+        setAnswerContent(choices[0]);
+      }
+      if (value === "B") {
+        setAnswerContent(choices[1]);
+      }
+      if (value === "C") {
+        setAnswerContent(choices[2]);
+      }
+      if (value === "D") {
+        setAnswerContent(choices[3]);
+      }
+      bingo();
+    } else if (value !== answer && value !== "") {
       setHelperText("Sorry, wrong answer!");
       setError(true);
     } else {
@@ -75,22 +132,22 @@ export function Choices({ choices, right_choice_num, onComplete }) {
         {/* <FormLabel id="demo-error-radios"></FormLabel> */}
         <RadioGroup name="quiz" value={value} onChange={handleRadioChange}>
           <FormControlLabel
-            value={choicesValues[0]}
+            value={"A"}
             control={<Radio />}
             label={choices[0]}
           />
           <FormControlLabel
-            value={choicesValues[1]}
+            value={"B"}
             control={<Radio />}
             label={choices[1]}
           />
           <FormControlLabel
-            value={choicesValues[2]}
+            value={"C"}
             control={<Radio />}
             label={choices[2]}
           />
           <FormControlLabel
-            value={choicesValues[3]}
+            value={"D"}
             control={<Radio />}
             label={choices[3]}
           />

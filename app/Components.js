@@ -87,7 +87,6 @@ export function Choices({
   useEffect(() => {
     if (currQuestionId === maxQuestionsNum || error) {
       localStorage.setItem("answerResult", currQuestionId);
-      console.log("should work", localStorage.getItem("answerResult"));
       router.push("answer-result");
     }
   }, [currQuestionId, error, router, maxQuestionsNum]);

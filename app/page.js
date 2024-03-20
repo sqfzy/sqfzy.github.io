@@ -13,15 +13,17 @@ export const maxQuestionsNum = 20;
 export default function Home() {
   const router = useRouter();
 
-  useEffect(() => {
-    // 检查用户是否已答题
-    const answerResult = localStorage.getItem("answerResult");
+  if (typeof window !== "undefined") {
+    useEffect(() => {
+      // 检查用户是否已答题
+      const answerResult = localStorage.getItem("answerResult");
 
-    if (answerResult) {
-      // 如果用户已答题，重定向到指定页面
-      router.push("answer-result");
-    }
-  }, [router]);
+      if (answerResult) {
+        // 如果用户已答题，重定向到指定页面
+        router.push("answer-result");
+      }
+    }, [router]);
+  }
 
   const [currQuestionId, setCurrQuestionId] = useState(0);
   const [randomQuestions, setRandomQuestions] = useState([]);

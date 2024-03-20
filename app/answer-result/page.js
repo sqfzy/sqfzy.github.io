@@ -5,7 +5,10 @@ import { Container } from "@mui/material";
 import { maxQuestionsNum } from "../page";
 
 export default function AnswerResult() {
-  const result = localStorage.getItem("answerResult");
+  const result = null;
+  if (typeof window !== "undefined") {
+    const result = localStorage.getItem("answerResult");
+  }
 
   return (
     <Container

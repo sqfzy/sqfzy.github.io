@@ -20,7 +20,7 @@ export default function Home() {
 
       if (answerResult) {
         // 如果用户已答题，重定向到指定页面
-        router.push("already-answer");
+        router.push("simple-already-answer");
       }
     }, [router]);
   }

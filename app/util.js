@@ -11,7 +11,16 @@ export function generateRandomNumbers(count, max) {
   return randomNumbers;
 }
 
-import { kv } from "@vercel/kv";
+// import { kv } from "@vercel/kv";
+
+import { createClient } from "@vercel/kv";
+
+const kv = createClient({
+  // url: 'https://<hostname>.redis.vercel-storage.com',
+  url: "https://normal-mite-38893.upstash.io",
+  token:
+    "AZftASQgMWU0ZDc3M2EtMjZhZC00ZWIxLTlkOGQtNWI0OTQzNDM4ZmZhYTdlNDQ4YmNmMGZlNDcyMWExYjQ1ZmRhM2Q4NTQ3OWI=",
+});
 
 // 记录题目回答的人数
 export async function recordAnswerCount(questionSeq) {

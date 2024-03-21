@@ -173,7 +173,7 @@ export function Choices({
         </RadioGroup>
         <FormHelperText>{alert}</FormHelperText>
         <Button sx={{ mt: 1, mr: 1 }} type="submit" variant="outlined">
-          Check Answer
+          确认答案
         </Button>
       </FormControl>
     </form>
@@ -234,6 +234,7 @@ export function SimpleQuestion({
   return (
     <div>
       <Accordion
+        // disabled={disabled}
         expanded={id === expanded_id}
         onChange={onChance}
         style={id === expanded_id ? expandedStyle : {}}
@@ -269,6 +270,7 @@ export function SimpleChoices({
   setAnswerContent,
 }) {
   const [display, setDisplay] = React.useState({});
+  const [isSubmitted, setIsSubmitted] = React.useState(false);
   const [value, setValue] = React.useState("");
   const [error, setError] = React.useState(false);
   const [basicAlert, setBasicAlert] = React.useState("info");
@@ -291,6 +293,7 @@ export function SimpleChoices({
   const handleSubmit = async (event) => {
     event.preventDefault();
     setDisplay({ display: "none" });
+    setIsSubmitted(true);
     onCompleted();
 
     recordAnswerCount(seq).then();
@@ -301,16 +304,16 @@ export function SimpleChoices({
 
       recordAnswerRight(seq).then();
 
-      if (value === "A") {
+      if (answer === "A") {
         setAnswerContent(choices[0]);
       }
-      if (value === "B") {
+      if (answer === "B") {
         setAnswerContent(choices[1]);
       }
-      if (value === "C") {
+      if (answer === "C") {
         setAnswerContent(choices[2]);
       }
-      if (value === "D") {
+      if (answer === "D") {
         setAnswerContent(choices[3]);
       }
 
@@ -320,6 +323,19 @@ export function SimpleChoices({
     } else if (value !== answer && value !== "") {
       setBasicAlert("error");
       setError(true);
+
+      if (answer === "A") {
+        setAnswerContent(choices[0]);
+      }
+      if (answer === "B") {
+        setAnswerContent(choices[1]);
+      }
+      if (answer === "C") {
+        setAnswerContent(choices[2]);
+      }
+      if (answer === "D") {
+        setAnswerContent(choices[3]);
+      }
     } else {
       setBasicAlert("warn");
     }
@@ -343,22 +359,22 @@ export function SimpleChoices({
         <RadioGroup name="quiz" value={value} onChange={handleRadioChange}>
           <FormControlLabel
             value={"A"}
-            control={<Radio />}
+            control={<Radio disabled={isSubmitted} />}
             label={choices[0]}
           />
           <FormControlLabel
             value={"B"}
-            control={<Radio />}
+            control={<Radio disabled={isSubmitted} />}
             label={choices[1]}
           />
           <FormControlLabel
             value={"C"}
-            control={<Radio />}
+            control={<Radio disabled={isSubmitted} />}
             label={choices[2]}
           />
           <FormControlLabel
             value={"D"}
-            control={<Radio />}
+            control={<Radio disabled={isSubmitted} />}
             label={choices[3]}
           />
         </RadioGroup>
@@ -369,7 +385,7 @@ export function SimpleChoices({
           variant="outlined"
           style={display}
         >
-          Check Answer
+          确认答案
         </Button>
       </FormControl>
     </form>

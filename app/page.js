@@ -58,7 +58,7 @@ export function GroupOrientation() {
             router.push("simple");
           }}
         >
-          问卷模式
+          标准模式
         </Button>
         <Button
           key="hard"

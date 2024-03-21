@@ -5,7 +5,7 @@ import styles from "../page.module.css";
 import React, { useEffect, useState } from "react";
 import { Choices, Question } from "../Components";
 import { questions } from "../questions";
-import { generateRandomNumbers } from "../util";
+import { generateRandomNumbers, recordAnswerCount } from "../util";
 import { useRouter } from "next/navigation";
 
 export const maxQuestionsNum = 20;
@@ -13,15 +13,17 @@ export const maxQuestionsNum = 20;
 export default function Home() {
   const router = useRouter();
 
-  // useEffect(() => {
-  //   // 检查用户是否已答题
-  //   const answerResult = localStorage.getItem("answerResult");
+  // if (typeof window !== "undefined") {
+  //   useEffect(() => {
+  //     // 检查用户是否已答题
+  //     const answerResult = localStorage.getItem("answerResult");
   //
-  //   if (answerResult) {
-  //     // 如果用户已答题，重定向到指定页面
-  //     router.push("answer-result");
-  //   }
-  // }, [router]);
+  //     if (answerResult) {
+  //       // 如果用户已答题，重定向到指定页面
+  //       router.push("already-answer");
+  //     }
+  //   }, [router]);
+  // }
 
   const [currQuestionId, setCurrQuestionId] = useState(0);
   const [randomQuestions, setRandomQuestions] = useState([]);
@@ -62,15 +64,16 @@ export default function Home() {
             currQuestionId={currQuestionId}
             onChance={handleChange(question.id)}
           >
-            {/*   <Choices */}
-            {/*     currQuestionId={currQuestionId} */}
-            {/*     choices={question.choices} */}
-            {/*     answer={question.answer} */}
-            {/*     bingo={() => { */}
-            {/*       setExpanded((prevId) => prevId + 1); */}
-            {/*       setCurrQuestionId((prevId) => prevId + 1); */}
-            {/*     }} */}
-            {/*   /> */}
+            <Choices
+              currQuestionId={currQuestionId}
+              seq={question.seq}
+              choices={question.choices}
+              answer={question.answer}
+              bingo={() => {
+                setExpanded((prevId) => prevId + 1);
+                setCurrQuestionId((prevId) => prevId + 1);
+              }}
+            />
           </Question>
         ))}
       </div>

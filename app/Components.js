@@ -66,7 +66,7 @@ import FormControl from "@mui/material/FormControl";
 import FormHelperText from "@mui/material/FormHelperText";
 import Button from "@mui/material/Button";
 import { BorderAll } from "@mui/icons-material";
-import { maxQuestionsNum } from "./page";
+import { maxQuestionsNum } from "./hard/page";
 import { useRouter } from "next/navigation";
 
 // @Params
@@ -89,7 +89,7 @@ export function Choices({
   useEffect(() => {
     if (currQuestionId === maxQuestionsNum || error) {
       localStorage.setItem("answerResult", currQuestionId);
-      router.push("answer-result");
+      router.push("hard-answer-result");
     }
   }, [currQuestionId, error, router, maxQuestionsNum]);
 
@@ -125,7 +125,7 @@ export function Choices({
 
       setTimeout(() => {
         bingo();
-      }, 300);
+      }, 500);
     } else if (value !== answer && value !== "") {
       setBasicAlert("error");
       setError(true);
@@ -319,7 +319,7 @@ export function SimpleChoices({
 
       setTimeout(() => {
         bingo();
-      }, 300);
+      }, 500);
     } else if (value !== answer && value !== "") {
       setBasicAlert("error");
       setError(true);

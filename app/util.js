@@ -20,9 +20,10 @@ export async function recordAnswerCount(questionSeq) {
 
   if (value) {
     await kv.set(key, parseInt(value) + 1);
-    // console.log("set key", key, "value", parseInt(value) + 1);
+    console.log(key, "count:", parseInt(value) + 1);
   } else {
     await kv.set(key, 1);
+    console.log(key, "count:", 1);
     // console.log("set key", key, "value", 1);
   }
   // console.log("recordAnswerCount");
@@ -37,8 +38,10 @@ export async function recordAnswerRight(questionSeq) {
 
   if (value) {
     await kv.set(key, parseInt(value) + 1);
+    console.log(key, "right count:", parseInt(value) + 1);
   } else {
     await kv.set(key, 1);
+    console.log(key, "right count:", 1);
   }
 
   // console.log("recordAnswerRight");

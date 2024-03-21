@@ -1,14 +1,18 @@
 import { GetStaticProps } from "next";
 
 export function generateRandomNumbers(count, max) {
-  const randomNumbers = [];
-
-  for (let i = 0; i < count; i++) {
-    const randomNumber = Math.floor(Math.random() * (max + 1));
-    randomNumbers.push(randomNumber);
+  if (count > max + 1) {
+    throw new Error("Requested more numbers than are available in the range.");
   }
 
-  return randomNumbers;
+  const randomNumbers = new Set();
+
+  while (randomNumbers.size < count) {
+    const randomNumber = Math.floor(Math.random() * (max + 1));
+    randomNumbers.add(randomNumber);
+  }
+
+  return Array.from(randomNumbers);
 }
 
 // import { kv } from "@vercel/kv";

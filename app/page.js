@@ -5,17 +5,17 @@ import { useRouter } from "next/navigation";
 
 export default function Home() {
   const router = useRouter();
-  // if (typeof window !== "undefined") {
-  //   React.useEffect(() => {
-  //     // 检查用户是否已答题
-  //     const answerResult = localStorage.getItem("answerResult");
-  //
-  //     if (answerResult) {
-  //       // 如果用户已答题，重定向到指定页面
-  //       router.push("answer-result");
-  //     }
-  //   }, [router]);
-  // }
+  if (typeof window !== "undefined") {
+    React.useEffect(() => {
+      // 检查用户是否已答题
+      const answerResult = localStorage.getItem("answerResult");
+
+      if (answerResult) {
+        // 如果用户已答题，重定向到指定页面
+        router.push("answer-result");
+      }
+    }, [router]);
+  }
 
   return (
     <Container

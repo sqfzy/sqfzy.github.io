@@ -1,12 +1,12 @@
 "use client";
 
 import { Container } from "@mui/material";
-import { maxQuestionsNum } from "../page";
+import { maxSimpleQuestionsNum } from "../simple/page";
 
 export default function AnswerResult() {
   let result = null;
   if (typeof window !== "undefined") {
-    result = localStorage.getItem("answerResult");
+    result = localStorage.getItem("answerRightResult");
   }
 
   return (
@@ -35,7 +35,7 @@ export function BasicCard({ result }) {
     <Card sx={{ minWidth: 275 }}>
       <CardContent>
         <Typography variant="h3" component="div" marginBottom={3}>
-          您答对了 {result}/{maxQuestionsNum} 题
+          您答对了 {result}/{maxSimpleQuestionsNum} 题
         </Typography>
         <Typography sx={{ mb: 1.5 }} variant="h4" color="text.secondary">
           感谢你的参与！

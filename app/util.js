@@ -66,7 +66,7 @@ import { questionNum } from "./page";
 
 // BUG:
 export async function flush() {
-  for (let seq = 0; seq < 1; seq++) {
+  for (let seq = 0; seq < 100; seq++) {
     await kv.set(`question_${seq}_answer_count`, 0);
     await kv.set(`question_${seq}_answer_right`, 0);
   }
@@ -75,9 +75,7 @@ export async function flush() {
 export async function fetch_all_datas() {
   let counts = [];
   let rights = [];
-  for (let seq = 0; seq < 5; seq++) {
-    // const count = await kv.get(`question_${seq}_answer_count`);
-    // const right = await kv.get(`question_${seq}_answer_right`);
+  for (let seq = 0; seq < 100; seq++) {
     counts.push(await kv.get(`question_${seq}_answer_count`));
     rights.push(await kv.get(`question_${seq}_answer_right`));
   }

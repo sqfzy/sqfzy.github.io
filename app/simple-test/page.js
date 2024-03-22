@@ -8,7 +8,7 @@ import { questions } from "../questions";
 import { generateRandomNumbers, recordAnswerCount } from "../util";
 import { useRouter } from "next/navigation";
 
-export const maxSimpleQuestionsNum = 20;
+export const maxSimpleQuestionsNum = 10;
 
 export default function Home() {
   const router = useRouter();

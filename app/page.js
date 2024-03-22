@@ -3,7 +3,7 @@
 import { Container } from "@mui/material";
 import { useRouter } from "next/navigation";
 
-export const QuestionNum = 100;
+export const questionNum = 100;
 
 export default function Home() {
   const router = useRouter();

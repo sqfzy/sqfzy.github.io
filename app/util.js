@@ -62,11 +62,27 @@ export async function recordAnswerRight(questionSeq) {
   // console.log("value", value);
 }
 
-import { QuestionNum } from "./page";
+import { questionNum } from "./page";
 
+// BUG:
 export async function flush() {
-  for (let seq = 0; seq < 100; seq++) {
-    await kv.set(`question_${seq}_answer_count`, seq);
-    await kv.set(`question_${seq}_answer_right`, seq);
+  for (let seq = 0; seq < 1; seq++) {
+    await kv.set(`question_${seq}_answer_count`, 0);
+    await kv.set(`question_${seq}_answer_right`, 0);
   }
+}
+
+export async function fetch_all_datas() {
+  let counts = [];
+  let rights = [];
+  for (let seq = 0; seq < 5; seq++) {
+    // const count = await kv.get(`question_${seq}_answer_count`);
+    // const right = await kv.get(`question_${seq}_answer_right`);
+    counts.push(await kv.get(`question_${seq}_answer_count`));
+    rights.push(await kv.get(`question_${seq}_answer_right`));
+  }
+  return {
+    counts,
+    rights,
+  };
 }

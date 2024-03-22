@@ -61,3 +61,12 @@ export async function recordAnswerRight(questionSeq) {
   // console.log("key", key);
   // console.log("value", value);
 }
+
+import { QuestionNum } from "./page";
+
+export async function flush() {
+  for (let seq = 0; seq < 100; seq++) {
+    await kv.set(`question_${seq}_answer_count`, seq);
+    await kv.set(`question_${seq}_answer_right`, seq);
+  }
+}

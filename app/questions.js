@@ -201,7 +201,7 @@ export const questions = [
       "44.05",
       "60.08"
     ],
-    "answer": "C",
+    "answer": "B",
     "seq": 18
   },
   {
